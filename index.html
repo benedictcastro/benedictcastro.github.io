@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Benedict Castro - Portfolio</title>
-    <meta name="description" content="Accounting portfolio of Benedict Delos Santos Castro: accounts receivable, financial reporting, feasibility analysis, and Excel automation.">
+    <meta name="description" content="Accounting portfolio of Benedict Castro: accounts receivable, financial reporting, feasibility analysis, and Excel automation.">
     <!-- Apply the saved theme before the page appears to avoid a color flash. -->
     <script>
       (() => {
@@ -93,7 +93,7 @@
       }
 
       a:hover {
-        text-decoration: underline;
+        text-decoration: none;
         text-underline-offset: 5px;
       }
 
@@ -170,7 +170,7 @@
       }
 
       .nav-contact {
-        border-bottom: 1px solid var(--primary);
+        border-bottom: 0;
         padding: 8px 0;
       }
 
@@ -408,7 +408,7 @@
         margin-top: 34px;
       }
 
-      .project-tools span {
+      .project-tools .skill-link {
         font-size: 11px;
         border: 1px solid #8e7362;
         padding: 5px 10px;
@@ -481,7 +481,7 @@
         gap: 8px;
       }
 
-      .tags li {
+      .tags .skill-link {
         background: var(--surface);
         border: 1px solid var(--line);
         border-radius: 30px;
@@ -599,7 +599,7 @@
 
       .contact .email {
         font-size: clamp(15px,2.1vw,23px);
-        border-bottom: 1px solid #8e7362;
+        border-bottom: 0;
         padding-bottom: 15px;
         overflow-wrap: anywhere;
       }
@@ -1117,6 +1117,114 @@
       @media (prefers-reduced-motion: reduce) {
         .social-link {
           transition: none;
+        }
+      }
+
+      /* SKILL REFERENCES: native links open official resources in a new tab. */
+      .tags li {
+        margin: 0;
+        padding: 0;
+      }
+
+      .skill-link {
+        display: inline-block;
+        cursor: pointer;
+        transition: border-color 160ms ease, background-color 160ms ease;
+      }
+
+      .tags .skill-link {
+        color: var(--text);
+      }
+
+      .project-tools .skill-link {
+        color: #e8dcd0;
+      }
+
+      .skill-link:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 3px;
+      }
+
+      @media (hover: hover) and (pointer: fine) {
+        .skill-link:hover {
+          border-color: var(--accent);
+          text-decoration: none;
+          text-underline-offset: 3px;
+        }
+
+        .project-tools .skill-link:hover {
+          border-color: #d5b58c;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .skill-link {
+          transition: none;
+        }
+      }
+
+      /* LINK FEEDBACK: a small lift and highlight replace all hover underlines. */
+      a:hover,
+      a:focus-visible {
+        text-decoration: none;
+      }
+
+      .nav-contact,
+      .contact .email {
+        border-bottom: 0;
+      }
+
+      nav a,
+      .contact address a,
+      footer a,
+      a.social-link,
+      .skill-link {
+        transition:
+          transform 180ms ease,
+          color 180ms ease,
+          background-color 180ms ease,
+          border-color 180ms ease,
+          box-shadow 180ms ease;
+      }
+
+      nav a,
+      footer a {
+        display: inline-flex;
+        align-items: center;
+      }
+
+      @media (hover: hover) and (pointer: fine) {
+        nav a:hover,
+        footer a:hover,
+        a.social-link:hover {
+          transform: translateY(-2px);
+        }
+
+        .skill-link:hover {
+          transform: translateY(-2px);
+          background-color: var(--bg);
+          box-shadow: 0 3px 9px rgba(53, 27, 25, 0.10);
+        }
+
+        .project-tools .skill-link:hover {
+          background-color: rgba(213, 181, 140, 0.12);
+        }
+
+        .contact address a:hover {
+          transform: translateX(3px);
+        }
+      }
+
+      /* Scroll movement is added progressively in JavaScript.
+         Content always remains visible if scripts or animations are unavailable. */
+      @media (prefers-reduced-motion: reduce) {
+        nav a,
+        .contact address a,
+        footer a,
+        a.social-link,
+        .skill-link {
+          transition: none;
+          transform: none !important;
         }
       }
 
@@ -2507,7 +2615,43 @@ KSU6IBwcLUBUFR5EwUbrYmeqsG261WG7267Wq6ZtnSe352Eczz0ThxklDXwiTJPZvXv37uH+/nQ8cuWi
             <h3>AR Monitoring Automation for Leasing and Lending</h3>
             <p>Moneyhub Inc. · Leasing and lending</p>
             <div class="project-tools">
-              <span>Excel formulas</span><span>PivotTables</span><span>VBA/macros</span><span>AI tools</span>
+              <a
+                class="skill-link"
+                href="https://support.microsoft.com/en-us/excel/get-started/overview-of-formulas-in-excel"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Microsoft: overview of Excel formulas (opens in a new tab)"
+                aria-label="Excel formulas — Microsoft: overview of Excel formulas (opens in a new tab)"
+              >
+                Excel formulas
+              </a><a
+                class="skill-link"
+                href="https://support.microsoft.com/en-us/excel/get-started/create-a-pivottable-to-analyze-worksheet-data"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Microsoft: PivotTables explained (opens in a new tab)"
+                aria-label="PivotTables — Microsoft: PivotTables explained (opens in a new tab)"
+              >
+                PivotTables
+              </a><a
+                class="skill-link"
+                href="https://learn.microsoft.com/en-us/office/vba/library-reference/concepts/getting-started-with-vba-in-office"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Microsoft: getting started with VBA and macros (opens in a new tab)"
+                aria-label="VBA/macros — Microsoft: getting started with VBA and macros (opens in a new tab)"
+              >
+                VBA/macros
+              </a><a
+                class="skill-link"
+                href="https://www.ibm.com/think/topics/artificial-intelligence"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="IBM: artificial intelligence explained (opens in a new tab)"
+                aria-label="AI tools — IBM: artificial intelligence explained (opens in a new tab)"
+              >
+                AI tools
+              </a>
             </div>
           </div>
           <div class="project-copy">
@@ -2612,37 +2756,213 @@ KSU6IBwcLUBUFR5EwUbrYmeqsG261WG7267Wq6ZtnSe352Eczz0ThxklDXwiTJPZvXv37uH+/nQ8cuWi
               <div class="skill-group">
                 <h3>Accounting Software and Systems</h3>
                 <ul class="tags">
-                  <li>QuickBooks</li>
-                  <li>Microsoft Dynamics NAV</li>
-                  <li>In-House Accounting Systems</li>
+                  <li>
+                  <a
+                    class="skill-link"
+                    href="https://quickbooks.intuit.com/accounting/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Intuit: QuickBooks accounting software (opens in a new tab)"
+                    aria-label="QuickBooks — Intuit: QuickBooks accounting software (opens in a new tab)"
+                  >
+                    QuickBooks
+                  </a>
+                </li>
+                  <li>
+                  <a
+                    class="skill-link"
+                    href="https://learn.microsoft.com/en-us/previous-versions/dynamicsnav-2018/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Microsoft: Dynamics NAV overview (opens in a new tab)"
+                    aria-label="Microsoft Dynamics NAV — Microsoft: Dynamics NAV overview (opens in a new tab)"
+                  >
+                    Microsoft Dynamics NAV
+                  </a>
+                </li>
+                  <li>
+                  <a
+                    class="skill-link"
+                    href="https://www.oracle.com/erp/what-is-accounting-software/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Oracle: accounting software explained — general reference (opens in a new tab)"
+                    aria-label="In-House Accounting Systems — Oracle: accounting software explained — general reference (opens in a new tab)"
+                  >
+                    In-House Accounting Systems
+                  </a>
+                </li>
                 </ul>
               </div>
               <div class="skill-group">
                 <h3>Computer Literacy and Productivity</h3>
                 <ul class="tags">
-                  <li>Microsoft Office</li>
-                  <li>Google Workspace</li>
-                  <li>Digital Reporting</li>
-                  <li>Documentation Tools</li>
+                  <li>
+                  <a
+                    class="skill-link"
+                    href="https://www.microsoft.com/en-us/microsoft-365"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Microsoft: Office and Microsoft 365 apps (opens in a new tab)"
+                    aria-label="Microsoft Office — Microsoft: Office and Microsoft 365 apps (opens in a new tab)"
+                  >
+                    Microsoft Office
+                  </a>
+                </li>
+                  <li>
+                  <a
+                    class="skill-link"
+                    href="https://workspace.google.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Google: Workspace overview (opens in a new tab)"
+                    aria-label="Google Workspace — Google: Workspace overview (opens in a new tab)"
+                  >
+                    Google Workspace
+                  </a>
+                </li>
+                  <li>
+                  <a
+                    class="skill-link"
+                    href="https://learn.microsoft.com/en-us/power-bi/fundamentals/power-bi-overview"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Microsoft: digital reporting and dashboards with Power BI — example (opens in a new tab)"
+                    aria-label="Digital Reporting — Microsoft: digital reporting and dashboards with Power BI — example (opens in a new tab)"
+                  >
+                    Digital Reporting
+                  </a>
+                </li>
+                  <li>
+                  <a
+                    class="skill-link"
+                    href="https://workspace.google.com/products/docs/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Google: document creation and collaboration tools — example (opens in a new tab)"
+                    aria-label="Documentation Tools — Google: document creation and collaboration tools — example (opens in a new tab)"
+                  >
+                    Documentation Tools
+                  </a>
+                </li>
                 </ul>
               </div>
               <div class="skill-group">
                 <h3>Excel and Data Analysis</h3>
                 <ul class="tags">
-                  <li>Advanced Microsoft Excel</li>
-                  <li>Excel Formulas</li>
-                  <li>PivotTables</li>
-                  <li>Data Analysis</li>
+                  <li>
+                  <a
+                    class="skill-link"
+                    href="https://www.microsoft.com/en-us/microsoft-365/excel"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Microsoft: Excel features and capabilities (opens in a new tab)"
+                    aria-label="Advanced Microsoft Excel — Microsoft: Excel features and capabilities (opens in a new tab)"
+                  >
+                    Advanced Microsoft Excel
+                  </a>
+                </li>
+                  <li>
+                  <a
+                    class="skill-link"
+                    href="https://support.microsoft.com/en-us/excel/get-started/overview-of-formulas-in-excel"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Microsoft: overview of Excel formulas (opens in a new tab)"
+                    aria-label="Excel Formulas — Microsoft: overview of Excel formulas (opens in a new tab)"
+                  >
+                    Excel Formulas
+                  </a>
+                </li>
+                  <li>
+                  <a
+                    class="skill-link"
+                    href="https://support.microsoft.com/en-us/excel/get-started/create-a-pivottable-to-analyze-worksheet-data"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Microsoft: PivotTables explained (opens in a new tab)"
+                    aria-label="PivotTables — Microsoft: PivotTables explained (opens in a new tab)"
+                  >
+                    PivotTables
+                  </a>
+                </li>
+                  <li>
+                  <a
+                    class="skill-link"
+                    href="https://aws.amazon.com/what-is/data-analytics/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="AWS: data analytics explained (opens in a new tab)"
+                    aria-label="Data Analysis — AWS: data analytics explained (opens in a new tab)"
+                  >
+                    Data Analysis
+                  </a>
+                </li>
                 </ul>
               </div>
               <div class="skill-group">
                 <h3>Automation and AI</h3>
                 <ul class="tags">
-                  <li>Excel VBA</li>
-                  <li>Macros</li>
-                  <li>Excel Workflow Automation</li>
-                  <li>AI Productivity Tools</li>
-                  <li>AI-Assisted Automation</li>
+                  <li>
+                  <a
+                    class="skill-link"
+                    href="https://learn.microsoft.com/en-us/office/vba/api/overview/excel"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Microsoft: Excel VBA reference (opens in a new tab)"
+                    aria-label="Excel VBA — Microsoft: Excel VBA reference (opens in a new tab)"
+                  >
+                    Excel VBA
+                  </a>
+                </li>
+                  <li>
+                  <a
+                    class="skill-link"
+                    href="https://learn.microsoft.com/en-us/office/vba/library-reference/concepts/getting-started-with-vba-in-office"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Microsoft: VBA and macros explained (opens in a new tab)"
+                    aria-label="Macros — Microsoft: VBA and macros explained (opens in a new tab)"
+                  >
+                    Macros
+                  </a>
+                </li>
+                  <li>
+                  <a
+                    class="skill-link"
+                    href="https://learn.microsoft.com/en-us/office/vba/library-reference/concepts/getting-started-with-vba-in-office"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Microsoft: automating Office workflows with VBA (opens in a new tab)"
+                    aria-label="Excel Workflow Automation — Microsoft: automating Office workflows with VBA (opens in a new tab)"
+                  >
+                    Excel Workflow Automation
+                  </a>
+                </li>
+                  <li>
+                  <a
+                    class="skill-link"
+                    href="https://www.microsoft.com/en-us/microsoft-365-copilot"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Microsoft: AI productivity tools — Copilot example (opens in a new tab)"
+                    aria-label="AI Productivity Tools — Microsoft: AI productivity tools — Copilot example (opens in a new tab)"
+                  >
+                    AI Productivity Tools
+                  </a>
+                </li>
+                  <li>
+                  <a
+                    class="skill-link"
+                    href="https://www.ibm.com/think/topics/intelligent-automation"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="IBM: intelligent automation explained (opens in a new tab)"
+                    aria-label="AI-Assisted Automation — IBM: intelligent automation explained (opens in a new tab)"
+                  >
+                    AI-Assisted Automation
+                  </a>
+                </li>
                 </ul>
               </div>
             </div>
@@ -2653,28 +2973,160 @@ KSU6IBwcLUBUFR5EwUbrYmeqsG261WG7267Wq6ZtnSe352Eczz0ThxklDXwiTJPZvXv37uH+/nQ8cuWi
               <div class="skill-group">
                 <h3>Administration and Organization</h3>
                 <ul class="tags">
-                  <li>Administrative Support</li>
-                  <li>Scheduling</li>
-                  <li>Records Management</li>
-                  <li>Digital and Physical Filing</li>
-                  <li>Documentation</li>
-                  <li>Task Coordination</li>
+                  <li>
+                  <a
+                    class="skill-link"
+                    href="https://www.bls.gov/ooh/office-and-administrative-support/secretaries-and-administrative-assistants.htm"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Bureau of Labor Statistics: administrative support duties (opens in a new tab)"
+                    aria-label="Administrative Support — Bureau of Labor Statistics: administrative support duties (opens in a new tab)"
+                  >
+                    Administrative Support
+                  </a>
+                </li>
+                  <li>
+                  <a
+                    class="skill-link"
+                    href="https://workspace.google.com/products/calendar/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Google: calendar and scheduling tools (opens in a new tab)"
+                    aria-label="Scheduling — Google: calendar and scheduling tools (opens in a new tab)"
+                  >
+                    Scheduling
+                  </a>
+                </li>
+                  <li>
+                  <a
+                    class="skill-link"
+                    href="https://learn.microsoft.com/en-us/purview/records-management"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Microsoft: records management explained (opens in a new tab)"
+                    aria-label="Records Management — Microsoft: records management explained (opens in a new tab)"
+                  >
+                    Records Management
+                  </a>
+                </li>
+                  <li>
+                  <a
+                    class="skill-link"
+                    href="https://www.ibm.com/think/topics/document-management"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="IBM: document storage and management explained (opens in a new tab)"
+                    aria-label="Digital and Physical Filing — IBM: document storage and management explained (opens in a new tab)"
+                  >
+                    Digital and Physical Filing
+                  </a>
+                </li>
+                  <li>
+                  <a
+                    class="skill-link"
+                    href="https://www.ibm.com/think/topics/document-management"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="IBM: document management explained (opens in a new tab)"
+                    aria-label="Documentation — IBM: document management explained (opens in a new tab)"
+                  >
+                    Documentation
+                  </a>
+                </li>
+                  <li>
+                  <a
+                    class="skill-link"
+                    href="https://www.microsoft.com/en-us/microsoft-365/planner/microsoft-planner"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Microsoft: task coordination and planning — example (opens in a new tab)"
+                    aria-label="Task Coordination — Microsoft: task coordination and planning — example (opens in a new tab)"
+                  >
+                    Task Coordination
+                  </a>
+                </li>
                 </ul>
               </div>
               <div class="skill-group">
                 <h3>Creative and Digital</h3>
                 <ul class="tags">
-                  <li>Graphics and Publication Layout</li>
-                  <li>Social Media Marketing</li>
+                  <li>
+                  <a
+                    class="skill-link"
+                    href="https://www.adobe.com/products/indesign.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Adobe: layout design and desktop publishing — example (opens in a new tab)"
+                    aria-label="Graphics and Publication Layout — Adobe: layout design and desktop publishing — example (opens in a new tab)"
+                  >
+                    Graphics and Publication Layout
+                  </a>
+                </li>
+                  <li>
+                  <a
+                    class="skill-link"
+                    href="https://www.salesforce.com/marketing/social-media-marketing/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Salesforce: social media marketing explained (opens in a new tab)"
+                    aria-label="Social Media Marketing — Salesforce: social media marketing explained (opens in a new tab)"
+                  >
+                    Social Media Marketing
+                  </a>
+                </li>
                 </ul>
               </div>
               <div class="skill-group">
                 <h3>Communication and Leadership</h3>
                 <ul class="tags">
-                  <li>Client Communication</li>
-                  <li>Presentation Skills</li>
-                  <li>Cross-Team Coordination</li>
-                  <li>Student Organization Leadership</li>
+                  <li>
+                  <a
+                    class="skill-link"
+                    href="https://www.naceweb.org/career-readiness/competencies/career-readiness-defined"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="NACE: communication competency explained (opens in a new tab)"
+                    aria-label="Client Communication — NACE: communication competency explained (opens in a new tab)"
+                  >
+                    Client Communication
+                  </a>
+                </li>
+                  <li>
+                  <a
+                    class="skill-link"
+                    href="https://www.toastmasters.org/resources/public-speaking-tips"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Toastmasters: presentation and public speaking guidance (opens in a new tab)"
+                    aria-label="Presentation Skills — Toastmasters: presentation and public speaking guidance (opens in a new tab)"
+                  >
+                    Presentation Skills
+                  </a>
+                </li>
+                  <li>
+                  <a
+                    class="skill-link"
+                    href="https://www.naceweb.org/career-readiness/competencies/career-readiness-defined"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="NACE: teamwork competency explained (opens in a new tab)"
+                    aria-label="Cross-Team Coordination — NACE: teamwork competency explained (opens in a new tab)"
+                  >
+                    Cross-Team Coordination
+                  </a>
+                </li>
+                  <li>
+                  <a
+                    class="skill-link"
+                    href="https://www.naceweb.org/career-readiness/competencies/career-readiness-defined"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="NACE: leadership competency explained (opens in a new tab)"
+                    aria-label="Student Organization Leadership — NACE: leadership competency explained (opens in a new tab)"
+                  >
+                    Student Organization Leadership
+                  </a>
+                </li>
                 </ul>
               </div>
             </div>
@@ -2842,6 +3294,83 @@ KSU6IBwcLUBUFR5EwUbrYmeqsG261WG7267Wq6ZtnSe352Eczz0ThxklDXwiTJPZvXv37uH+/nQ8cuWi
             applyTheme(event.matches ? 'dark' : 'light');
           }
         });
+      })();
+    </script>
+    <!-- SCROLL REVEALS: one gentle perspective/scale reveal per content group. -->
+    <script>
+      (() => {
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+        if (reduceMotion.matches || !('IntersectionObserver' in window)
+          || !Element.prototype.animate) {
+          return;
+        }
+
+        const animations = new Set();
+        const targets = document.querySelectorAll([
+          '.section-heading',
+          '.service-grid',
+          '.role',
+          '.project-card',
+          '.competency-grid',
+          '.skills-block',
+          '.education-grid',
+          '.training-title',
+          '.table-scroll',
+          '.contact-grid'
+        ].join(', '));
+
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            observer.unobserve(entry.target);
+            if (reduceMotion.matches) return;
+
+            // A very small perspective shift gives a soft warp-like reveal.
+            // No individual letters move, and each group animates only once.
+            const animation = entry.target.animate([
+              {
+                opacity: 0.65,
+                transform: 'perspective(1200px) translateY(14px) rotateX(0.6deg) scale(0.992)'
+              },
+              {
+                opacity: 1,
+                transform: 'perspective(1200px) translateY(0) rotateX(0deg) scale(1)'
+              }
+            ], {
+              duration: 520,
+              easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
+              fill: 'none'
+            });
+
+            animations.add(animation);
+            animation.onfinish = () => animations.delete(animation);
+          });
+        }, {
+          threshold: 0,
+          rootMargin: '0px 0px -36px 0px'
+        });
+
+        // Skip content already on screen when the file first opens.
+        targets.forEach(target => {
+          if (target.getBoundingClientRect().top >= window.innerHeight - 36) {
+            observer.observe(target);
+          }
+        });
+
+        function stopAnimations() {
+          animations.forEach(animation => animation.cancel());
+          animations.clear();
+        }
+
+        reduceMotion.addEventListener('change', event => {
+          if (event.matches) {
+            observer.disconnect();
+            stopAnimations();
+          }
+        });
+
+        window.addEventListener('beforeprint', stopAnimations);
       })();
     </script>
   </body>
