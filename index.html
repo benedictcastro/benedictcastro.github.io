@@ -5,6 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Benedict Castro - Portfolio</title>
     <meta name="description" content="Accounting portfolio of Benedict Castro: accounts receivable, financial reporting, feasibility analysis, and Excel automation.">
+    <!-- Apply the saved theme before the page appears to avoid a color flash. -->
+    <script>
+      (() => {
+        const key = 'benedict-portfolio-theme';
+        let savedTheme = null;
+
+        try {
+          savedTheme = localStorage.getItem(key);
+        } catch (error) {
+          // The switch still works when browser storage is unavailable.
+        }
+
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = savedTheme === 'light' || savedTheme === 'dark'
+          ? savedTheme
+          : (prefersDark ? 'dark' : 'light');
+
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
     <style>
       /* STYLES: edit colors, spacing and typography below. */
       /* PALETTE: burgundy, warm ivory and antique gold, inspired by the portrait. */
@@ -15,6 +35,13 @@
         --bg: #f7f3ed;
         --line: #e4d9cd;
         --white: #fff;
+        --page: #fffdf9;
+        --surface: #fffdf9;
+        --header: rgba(255,253,249,.97);
+        --brand: #351b19;
+        --button: #351b19;
+        --button-text: #ffffff;
+        color-scheme: light;
         --accent: #896b42;
       }
 
@@ -30,7 +57,7 @@
       body {
         margin: 0;
         color: var(--primary);
-        background: #fffdf9;
+        background: var(--page);
         font: 16px/1.7 'Segoe UI',Arial,sans-serif;
       }
 
@@ -94,7 +121,7 @@
         position: sticky;
         top: 0;
         z-index: 10;
-        background: rgba(255,253,249,.97);
+        background: var(--header);
         border-bottom: 1px solid var(--line);
       }
 
@@ -118,7 +145,7 @@
       }
 
       .monogram {
-        background: var(--primary);
+        background: var(--brand);
         color: white;
         width: 43px;
         height: 43px;
@@ -248,13 +275,13 @@
       }
 
       .primary {
-        background: var(--primary);
-        color: white;
-        border-color: var(--primary);
+        background: var(--button);
+        color: var(--button-text);
+        border-color: var(--button);
       }
 
       .secondary {
-        background: #fffdf9;
+        background: var(--surface);
       }
 
       .section {
@@ -354,7 +381,7 @@
       }
 
       .project-intro {
-        background: var(--primary);
+        background: var(--brand);
         padding: 42px;
         color: white;
       }
@@ -406,7 +433,7 @@
       }
 
       .competency {
-        background: #fffdf9;
+        background: var(--surface);
         border: 1px solid var(--line);
         padding: 24px;
       }
@@ -455,7 +482,7 @@
       }
 
       .tags li {
-        background: #fffdf9;
+        background: var(--surface);
         border: 1px solid var(--line);
         border-radius: 30px;
         padding: 7px 12px;
@@ -532,7 +559,7 @@
       }
 
       .contact {
-        background: var(--primary);
+        background: var(--brand);
         color: white;
         padding: 70px 0;
       }
@@ -607,7 +634,7 @@
         position: fixed;
         top: -100px;
         left: 20px;
-        background: #fffdf9;
+        background: var(--surface);
         padding: 10px;
         z-index: 30;
       }
@@ -891,6 +918,159 @@
           max-width: 340px;
         }
       }
+
+      /* DARK MODE: warm charcoal, ivory text and muted gold accents. */
+      :root[data-theme="dark"] {
+        --primary: #f2e7d9;
+        --text: #d5c7bb;
+        --muted: #bca58b;
+        --bg: #231d1a;
+        --line: #493b33;
+        --white: #2a211d;
+        --accent: #c7a577;
+        --page: #191513;
+        --surface: #2a211d;
+        --header: rgba(25,21,19,.97);
+        --brand: #351b19;
+        --button: #d5b58c;
+        --button-text: #251a14;
+        color-scheme: dark;
+      }
+
+      .theme-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        min-height: 40px;
+        padding: 8px 12px;
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        background: var(--surface);
+        color: var(--primary);
+        font: inherit;
+        font-size: 12px;
+        cursor: pointer;
+      }
+
+      .theme-toggle:hover {
+        border-color: var(--muted);
+      }
+
+      .theme-toggle:focus-visible {
+        outline: 3px solid var(--accent);
+        outline-offset: 4px;
+      }
+
+      .theme-toggle[hidden] {
+        display: none;
+      }
+
+      .theme-icon {
+        font-size: 16px;
+        line-height: 1;
+      }
+
+      @media (max-width: 640px) {
+        nav {
+          gap: 8px;
+          flex-wrap: wrap;
+        }
+
+        .theme-toggle {
+          padding: 7px 10px;
+          font-size: 11px;
+        }
+      }
+
+      @media print {
+        .theme-toggle {
+          display: none;
+        }
+
+        :root[data-theme] {
+          --primary: #351b19;
+          --text: #55413b;
+          --muted: #80684f;
+          --bg: #f7f3ed;
+          --line: #e4d9cd;
+          --page: #fffdf9;
+          --surface: #fffdf9;
+          color-scheme: light;
+        }
+      }
+
+      /* INTERACTION: subtle feedback only on links and buttons. */
+      .button,
+      .theme-toggle {
+        transition:
+          transform 160ms ease,
+          box-shadow 160ms ease,
+          border-color 160ms ease,
+          background-color 160ms ease;
+      }
+
+      nav a,
+      .contact address a,
+      footer a {
+        transition: color 160ms ease, border-color 160ms ease;
+      }
+
+      /* Static cards, portraits and skill tags intentionally have no animation. */
+      @media (hover: hover) and (pointer: fine) {
+        .primary:hover {
+          transform: translateY(-1px);
+          box-shadow: 0 4px 12px rgba(53, 27, 25, 0.16);
+          text-decoration: none;
+        }
+
+        :root[data-theme="dark"] .primary:hover {
+          box-shadow: 0 4px 14px rgba(0, 0, 0, 0.24);
+        }
+
+        .secondary:hover,
+        .theme-toggle:hover {
+          background-color: var(--bg);
+          border-color: var(--muted);
+          text-decoration: none;
+        }
+
+        nav a:hover,
+        footer a:hover {
+          color: var(--accent);
+        }
+
+        .contact address a:hover {
+          color: #e7c99e;
+          border-color: #e7c99e;
+        }
+      }
+
+      .button:active,
+      .theme-toggle:active {
+        transform: translateY(1px);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .button,
+        .theme-toggle,
+        nav a,
+        .contact address a,
+        footer a {
+          transition: none;
+          transform: none !important;
+        }
+      }
+
+      /* Employment type appears directly beneath the position title. */
+      .role .employment-type {
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--muted);
+        margin-top: -4px;
+        margin-bottom: 10px;
+      }
+
     </style>
   </head>
   <body>
@@ -903,6 +1083,17 @@
         </a>
         <nav aria-label="Main navigation">
           <a href="#experience">Experience</a><a href="#project">Project</a><a href="#skills">Skills</a><a class="nav-contact" href="#contact">Let’s talk <span aria-hidden="true">↗</span></a>
+          <!-- Theme button: the label names the mode selected on click. -->
+          <button
+            id="theme-toggle"
+            class="theme-toggle"
+            type="button"
+            aria-label="Switch to dark mode"
+            hidden
+          >
+            <span class="theme-icon" aria-hidden="true">☾</span>
+            <span class="theme-label">Dark</span>
+          </button>
         </nav>
       </div>
     </header>
@@ -918,7 +1109,7 @@
           </p>
           <h2 class="sr-only">Professional Summary</h2>
           <p>
-            Accounting professional with experience in accounts receivable, billing, bookkeeping, financial reporting, bank reconciliation, and feasibility analysis. Background spans leasing, lending, manufacturing, and feasibility study services, with a strong focus on maintaining financial accuracy, streamlining accounting processes, and delivering reliable financial reports and analysis to support business decision-making.
+           Accounting professional with experience in accounts receivable, billing, bookkeeping, financial reporting, bank reconciliation, and feasibility analysis. Background spans leasing, lending, manufacturing, and feasibility study services, with a strong focus on maintaining financial accuracy, streamlining accounting processes, and delivering reliable financial reports and analysis to support business decision-making.
           </p>
           <div class="actions">
             <a class="button primary" href="#contact">Discuss an opportunity <span aria-hidden="true">↗</span></a><a class="button secondary" href="#project">Explore the project <span aria-hidden="true">↓</span></a>
@@ -2142,7 +2333,8 @@ KSU6IBwcLUBUFR5EwUbrYmeqsG261WG7267Wq6ZtnSe352Eczz0ThxklDXwiTJPZvXv37uH+/nQ8cuWi
             <article class="role">
               <div class="role-meta">
                 <p class="date">August 2026–Present</p>
-                <h3>Feasibility Accountant — Part-time</h3>
+                <h3>Feasibility Accountant</h3>
+              <p class="employment-type">Part-time</p>
                 <p class="company">Feasib Accountant</p>
               </div>
               <div class="role-details">
@@ -2512,5 +2704,56 @@ KSU6IBwcLUBUFR5EwUbrYmeqsG261WG7267Wq6ZtnSe352Eczz0ThxklDXwiTJPZvXv37uH+/nQ8cuWi
     <footer class="wrap">
       <span>Benedict Castro</span><a href="#home">Back to top ↑</a>
     </footer>
+    <!-- THEME SWITCH: save a choice, or follow the system until one is made. -->
+    <script>
+      (() => {
+        const key = 'benedict-portfolio-theme';
+        const root = document.documentElement;
+        const button = document.getElementById('theme-toggle');
+        const label = button.querySelector('.theme-label');
+        const icon = button.querySelector('.theme-icon');
+        const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
+        let hasPreference = false;
+
+        try {
+          const saved = localStorage.getItem(key);
+          hasPreference = saved === 'dark' || saved === 'light';
+        } catch (error) {
+          // Storage can be blocked in private or local-file browsing.
+        }
+
+        function applyTheme(theme) {
+          root.dataset.theme = theme;
+          const isDark = theme === 'dark';
+          label.textContent = isDark ? 'Light' : 'Dark';
+          icon.textContent = isDark ? '☀' : '☾';
+          button.setAttribute('aria-label', isDark
+            ? 'Switch to light mode'
+            : 'Switch to dark mode');
+          button.title = isDark ? 'Switch to light mode' : 'Switch to dark mode';
+        }
+
+        applyTheme(root.dataset.theme);
+        button.hidden = false;
+
+        button.addEventListener('click', () => {
+          const theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+          hasPreference = true;
+          applyTheme(theme);
+
+          try {
+            localStorage.setItem(key, theme);
+          } catch (error) {
+            // Keep the chosen theme for this visit when saving is blocked.
+          }
+        });
+
+        systemTheme.addEventListener('change', event => {
+          if (!hasPreference) {
+            applyTheme(event.matches ? 'dark' : 'light');
+          }
+        });
+      })();
+    </script>
   </body>
 </html>
