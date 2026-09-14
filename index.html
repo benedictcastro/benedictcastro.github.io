@@ -3,145 +3,236 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Benedict Delos Santos Castro — Portfolio</title>
+<meta name="description" content="Portfolio of Benedict Delos Santos Castro — Billing Officer and Accounting Professional.">
+<title>Benedict Delos Santos Castro — Accountant</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+
 <style>
-  :root{
-    --paper:#FAF8F3;
-    --paper-line:#DAD3C0;
-    --ink:#1C2A22;
-    --ink-soft:#4A5A50;
-    --forest:#2F4E3C;
-    --gold:#9C7A3C;
-    --max:920px;
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:'Inter',sans-serif;
-    line-height:1.55;
-  }
-  h1,h2,h3{
-    font-family:'Newsreader',serif;
-    font-weight:500;
-    margin:0;
-    color:var(--ink);
-  }
-  .num{
-    font-family:'IBM Plex Mono',monospace;
-    font-variant-numeric:tabular-nums;
-  }
-  a{color:inherit;}
-  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px;}
+:root{
+  --bg:#f7f7f4;
+  --surface:#ffffff;
+  --text:#172019;
+  --muted:#66716a;
+  --line:#dfe3df;
+  --accent:#315b46;
+  --accent-soft:#e8eee9;
+  --max:1080px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:"DM Sans",sans-serif;
+  line-height:1.6;
+}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:auto;padding:0 28px}
+.skip{position:absolute;left:-999px;top:10px;background:var(--accent);color:#fff;padding:8px 12px}
+.skip:focus{left:10px}
 
-  .skip-link{position:absolute;left:-999px;top:0;background:var(--forest);color:#fff;padding:10px 16px;z-index:100;}
-  .skip-link:focus{left:12px;top:12px;}
+header{
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:rgba(247,247,244,.94);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{
+  min-height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+.brand{
+  font-family:"DM Mono",monospace;
+  font-size:13px;
+  letter-spacing:.04em;
+  font-weight:500;
+}
+nav ul{list-style:none;margin:0;padding:0;display:flex;gap:26px;font-size:14px}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--text)}
 
-  header{
-    padding:64px 0 40px;
-    border-bottom:1px solid var(--paper-line);
-  }
-  header .wrap{
-    display:flex;
-    justify-content:space-between;
-    align-items:baseline;
-    flex-wrap:wrap;
-    gap:16px;
-  }
-  .brand{font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:.02em;color:var(--ink-soft);}
-  nav ul{list-style:none;display:flex;gap:28px;margin:0;padding:0;font-size:14px;}
-  nav a{text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px;transition:border-color .15s ease;}
-  nav a:hover, nav a:focus-visible{border-color:var(--forest);}
+.hero{padding:94px 0 76px}
+.hero-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.5fr) minmax(250px,.7fr);
+  gap:70px;
+  align-items:end;
+}
+.eyebrow{
+  font-family:"DM Mono",monospace;
+  font-size:12px;
+  color:var(--accent);
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  margin-bottom:18px;
+}
+h1,h2,h3{
+  margin:0;
+  font-family:"Newsreader",serif;
+  font-weight:500;
+}
+h1{
+  font-size:clamp(52px,8vw,92px);
+  line-height:.95;
+  letter-spacing:-.035em;
+  max-width:9ch;
+}
+.hero-role{
+  font-family:"Newsreader",serif;
+  font-style:italic;
+  font-size:clamp(23px,3vw,32px);
+  color:var(--muted);
+  margin-top:24px;
+}
+.hero-copy{
+  max-width:680px;
+  font-size:17px;
+  color:var(--muted);
+  margin:26px 0 0;
+}
+.hero-side{
+  border-left:2px solid var(--accent);
+  padding-left:24px;
+  color:var(--muted);
+  font-size:14px;
+}
+.hero-side strong{display:block;color:var(--text);font-weight:600;margin-bottom:5px}
+.hero-side div+div{margin-top:22px}
 
-  .hero{padding:80px 0 60px;}
-  .hero .statement-no{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--gold);margin-bottom:18px;}
-  .hero h1{font-size:clamp(38px,6vw,64px);line-height:1.05;max-width:14ch;}
-  .hero .role{
-    font-family:'Newsreader',serif;font-style:italic;font-size:clamp(20px,2.4vw,26px);
-    color:var(--ink-soft);margin-top:10px;
-  }
-  .hero .lede{max-width:58ch;margin-top:26px;font-size:17px;color:var(--ink-soft);}
+.stats{
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  background:var(--surface);
+}
+.stats-grid{display:grid;grid-template-columns:repeat(3,1fr)}
+.stat{
+  padding:28px 24px 30px 0;
+}
+.stat+.stat{border-left:1px solid var(--line);padding-left:24px}
+.stat-value{
+  font-family:"DM Mono",monospace;
+  font-size:30px;
+  color:var(--accent);
+}
+.stat-label{font-size:13px;color:var(--muted);margin-top:3px}
 
-  .ledger-rule{border:none;border-top:1px solid var(--paper-line);margin:0;}
-  .ledger-rule.thick{border-top:2px solid var(--ink);}
+section{padding:86px 0}
+.section-head{
+  display:grid;
+  grid-template-columns:260px 1fr;
+  gap:50px;
+  margin-bottom:44px;
+}
+.section-number{
+  font-family:"DM Mono",monospace;
+  font-size:12px;
+  color:var(--accent);
+  letter-spacing:.1em;
+}
+h2{font-size:42px;line-height:1.05}
+.section-intro{color:var(--muted);max-width:620px;margin:12px 0 0;font-size:15px}
 
-  .figures{padding:36px 0;border-top:2px solid var(--ink);border-bottom:1px solid var(--paper-line);}
-  .figures .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-  .figure-item{padding-right:20px;}
-  .figure-item .val{font-family:'IBM Plex Mono',monospace;font-size:32px;color:var(--forest);}
-  .figure-item .label{font-size:13px;color:var(--ink-soft);margin-top:4px;}
+.about{
+  display:grid;
+  grid-template-columns:1.25fr .75fr;
+  gap:70px;
+}
+.about p{margin:0 0 18px;color:var(--muted);font-size:16px}
+.credentials{border-top:1px solid var(--line)}
+.credential{padding:17px 0;border-bottom:1px solid var(--line)}
+.credential-label{
+  font-family:"DM Mono",monospace;
+  font-size:11px;
+  color:var(--accent);
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+.credential-value{font-size:14px;margin-top:4px}
 
-  section{padding:64px 0;}
-  section > .wrap > h2{font-size:28px;margin-bottom:8px;}
-  .section-sub{color:var(--ink-soft);font-size:15px;margin-bottom:36px;max-width:52ch;}
+.skills{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:0 60px;
+  border-top:1px solid var(--line);
+}
+.skill{
+  padding:25px 0;
+  border-bottom:1px solid var(--line);
+}
+.skill h3{font-size:24px}
+.skill p{font-size:14px;color:var(--muted);margin:7px 0 0}
 
-  .about-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;}
-  .about-grid p{margin:0 0 16px;color:var(--ink-soft);font-size:16px;}
-  .about-grid p:last-child{margin-bottom:0;}
-  .credentials{border-left:2px solid var(--forest);padding-left:20px;}
-  .credentials dt{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--gold);margin-top:18px;}
-  .credentials dt:first-child{margin-top:0;}
-  .credentials dd{margin:2px 0 0;font-size:15px;}
+.experience{border-top:1px solid var(--line)}
+.job{
+  display:grid;
+  grid-template-columns:190px 1fr;
+  gap:45px;
+  padding:34px 0;
+  border-bottom:1px solid var(--line);
+}
+.job-date{font-family:"DM Mono",monospace;font-size:12px;color:var(--muted)}
+.job h3{font-size:28px}
+.company{font-size:14px;color:var(--accent);margin-top:3px;font-weight:600}
+.job ul{margin:18px 0 0;padding-left:20px;color:var(--muted);font-size:14px}
+.job li{margin-bottom:7px}
 
-  .line-item{
-    display:grid;grid-template-columns:1fr auto;gap:20px;
-    padding:22px 0;border-bottom:1px solid var(--paper-line);
-    align-items:baseline;
-  }
-  .line-item:first-of-type{border-top:1px solid var(--paper-line);}
-  .line-item h3{font-size:19px;font-weight:500;}
-  .line-item .desc{color:var(--ink-soft);font-size:14.5px;margin-top:6px;max-width:56ch;}
-  .line-item .tag{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--forest);white-space:nowrap;}
+.contact-box{
+  background:var(--accent);
+  color:#fff;
+  padding:56px;
+  border-radius:2px;
+}
+.contact-box h2{font-size:48px}
+.contact-box p{max-width:600px;color:#dfe9e2;margin:15px 0 30px}
+.contact-links{display:flex;flex-wrap:wrap;gap:24px}
+.contact-links a{
+  color:#fff;
+  text-decoration:none;
+  border-bottom:1px solid rgba(255,255,255,.6);
+  padding-bottom:2px;
+  font-family:"DM Mono",monospace;
+  font-size:13px;
+}
 
-  .statement{width:100%;border-collapse:collapse;font-size:15px;}
-  .statement thead th{
-    text-align:left;font-family:'IBM Plex Mono',monospace;font-weight:400;
-    font-size:12px;color:var(--ink-soft);padding-bottom:10px;border-bottom:2px solid var(--ink);
-  }
-  .statement td{padding:16px 12px 16px 0;border-bottom:1px solid var(--paper-line);vertical-align:top;}
-  .statement td.period{font-family:'IBM Plex Mono',monospace;color:var(--ink-soft);white-space:nowrap;font-size:13.5px;}
-  .statement td.role strong{display:block;font-size:16px;font-weight:600;}
-  .statement td.role span{color:var(--ink-soft);font-size:14px;}
-  .statement td.role ul{margin:8px 0 0;padding-left:18px;color:var(--ink-soft);font-size:14px;}
-  .statement td.role li{margin-bottom:4px;}
+footer{padding:35px 0 55px;color:var(--muted);font-size:12px}
+.footer-inner{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);padding-top:20px}
 
-  .contact-box{
-    border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);
-    padding:44px 0;
-  }
-  .contact-box h2{font-size:32px;margin-bottom:14px;}
-  .contact-box p{color:var(--ink-soft);max-width:48ch;margin-bottom:28px;}
-  .contact-links{display:flex;gap:32px;flex-wrap:wrap;font-family:'IBM Plex Mono',monospace;font-size:14px;}
-  .contact-links a{text-decoration:none;border-bottom:1px solid var(--forest);padding-bottom:2px;}
-
-  footer{padding:32px 0 48px;color:var(--ink-soft);font-size:13px;}
-
-  @media (max-width:700px){
-    .about-grid{grid-template-columns:1fr;}
-    .figures .wrap{grid-template-columns:1fr 1fr;}
-    nav ul{gap:16px;flex-wrap:wrap;}
-    .statement thead{display:none;}
-    .statement, .statement tbody, .statement tr, .statement td{display:block;width:100%;}
-    .statement tr{padding:16px 0;border-bottom:1px solid var(--paper-line);}
-    .statement td{border:none;padding:2px 0;}
-  }
-
-  @media (prefers-reduced-motion: reduce){
-    html{scroll-behavior:auto;}
-  }
+@media(max-width:760px){
+  .header-inner{align-items:flex-start;padding-top:17px;padding-bottom:17px}
+  nav ul{gap:14px;flex-wrap:wrap;justify-content:flex-end}
+  .hero{padding:65px 0}
+  .hero-grid,.about,.section-head{grid-template-columns:1fr;gap:30px}
+  .hero-side{border-left:0;border-top:1px solid var(--line);padding:22px 0 0}
+  .stats-grid{grid-template-columns:1fr}
+  .stat{padding:22px 0;border-bottom:1px solid var(--line)}
+  .stat+.stat{border-left:0;padding-left:0}
+  .skills{grid-template-columns:1fr}
+  .job{grid-template-columns:1fr;gap:8px}
+  section{padding:62px 0}
+  .contact-box{padding:36px 28px}
+  .contact-box h2{font-size:38px}
+  .footer-inner{flex-direction:column}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
+
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip" href="#main">Skip to content</a>
 
 <header>
-  <div class="wrap">
-    <span class="brand">B. CASTRO — ACCOUNTING</span>
-    <nav aria-label="Primary">
+  <div class="wrap header-inner">
+    <div class="brand">B. CASTRO — ACCOUNTING</div>
+    <nav aria-label="Primary navigation">
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
@@ -153,155 +244,196 @@
 </header>
 
 <main id="main">
-  <section class="hero">
-    <div class="wrap">
-      <div class="statement-no">STATEMENT OF QUALIFICATIONS — 2026</div>
-      <h1>Benedict Delos Santos Castro</h1>
-      <div class="role">Billing &amp; Accounts Receivable Officer</div>
-      <p class="lede">I manage billing operations and receivable portfolios end to end — from invoicing and collections to reconciliation and reporting — keeping the numbers accurate and the cash flow visible.</p>
-    </div>
-  </section>
 
-  <div class="figures">
-    <div class="wrap">
-      <div class="figure-item">
-        <div class="val">600+</div>
-        <div class="label">Customer accounts managed</div>
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Accountant · Billing · Accounts Receivable</div>
+      <h1>Benedict Delos Santos Castro</h1>
+      <div class="hero-role">Billing &amp; Accounts Receivable Officer</div>
+      <p class="hero-copy">
+        I manage billing operations and receivable portfolios end to end — from invoicing
+        and collections to reconciliation and reporting — keeping the numbers accurate
+        and the cash flow visible.
+      </p>
+    </div>
+    <aside class="hero-side">
+      <div><strong>Based in</strong>Balagtas, Bulacan, Philippines</div>
+      <div><strong>Focus</strong>Billing · AR · Financial Reporting</div>
+      <div><strong>Availability</strong>Open to accounting, billing, and AR opportunities</div>
+    </aside>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="wrap stats-grid">
+    <div class="stat">
+      <div class="stat-value">600+</div>
+      <div class="stat-label">Customer accounts managed</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">120+</div>
+      <div class="stat-label">Employees payrolled</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">100%</div>
+      <div class="stat-label">On-time disbursement &amp; BIR compliance</div>
+    </div>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-number">01 — ABOUT</div>
+      <div>
+        <h2>Numbers, systems, and reliable execution.</h2>
+        <p class="section-intro">A practical accounting professional with hands-on experience across billing, accounts receivable, financial reporting, reconciliation, and payroll.</p>
       </div>
-      <div class="figure-item">
-        <div class="val">120+</div>
-        <div class="label">Employees payrolled</div>
+    </div>
+
+    <div class="about">
+      <div>
+        <p>
+          I'm an accounting professional based in Bulacan, Philippines, with hands-on experience
+          across billing, accounts receivable, financial reporting, and payroll. I started as an
+          intern encoding daily transactions and processing payroll for a manpower services company,
+          then moved into full-cycle AR management for leasing and loan portfolios, and now run
+          billing operations for a manufacturing corporation's customer accounts.
+        </p>
+        <p>
+          What I bring to a team is precision under volume — managing hundreds of accounts without
+          letting anything slip, and turning raw transaction data into reports people can actually act on.
+        </p>
       </div>
-      <div class="figure-item">
-        <div class="val">100%</div>
-        <div class="label">On-time disbursement &amp; BIR compliance</div>
+
+      <div class="credentials">
+        <div class="credential">
+          <div class="credential-label">Education</div>
+          <div class="credential-value">B.S. Accounting Information Systems, STI College Balagtas (2021–2025)</div>
+        </div>
+        <div class="credential">
+          <div class="credential-label">Leadership</div>
+          <div class="credential-value">VP for Graphics &amp; Publications, Junior Philippine Institute of Accountants (JPIA)</div>
+        </div>
+        <div class="credential">
+          <div class="credential-label">Certifications</div>
+          <div class="credential-value">Lean Six Sigma White Belt · QuickBooks Online ProAdvisor</div>
+        </div>
+        <div class="credential">
+          <div class="credential-label">Location</div>
+          <div class="credential-value">Balagtas, Bulacan, Philippines</div>
+        </div>
       </div>
     </div>
   </div>
+</section>
 
-  <section id="about">
-    <div class="wrap">
-      <h2>About</h2>
-      <div class="about-grid">
-        <div>
-          <p>I'm an accounting professional based in Bulacan, Philippines, with hands-on experience across billing, accounts receivable, financial reporting, and payroll. I started as an intern encoding daily transactions and processing payroll for a manpower services company, then moved into full-cycle AR management for leasing and loan portfolios, and now run billing operations for a manufacturing corporation's largest customer accounts.</p>
-          <p>What I bring to a team is precision under volume — managing hundreds of accounts without letting anything slip, and turning raw transaction data into reports people can actually act on.</p>
-        </div>
-        <dl class="credentials">
-          <dt>EDUCATION</dt>
-          <dd>B.S. Accounting Information Systems, STI College Balagtas (2021–2025)</dd>
-          <dt>LEADERSHIP</dt>
-          <dd>VP for Graphics &amp; Publications, Junior Philippine Institute of Accountants (JPIA)</dd>
-          <dt>CERTIFICATIONS</dt>
-          <dd>Lean Six Sigma White Belt · QuickBooks Online ProAdvisor</dd>
-          <dt>LOCATION</dt>
-          <dd>Balagtas, Bulacan, Philippines</dd>
-        </dl>
+<section id="skills">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-number">02 — SKILLS</div>
+      <div>
+        <h2>Core competencies.</h2>
+        <p class="section-intro">Capabilities developed across internship, associate, and officer-level accounting roles.</p>
       </div>
     </div>
-  </section>
 
-  <section id="skills">
-    <div class="wrap">
-      <h2>Skills</h2>
-      <p class="section-sub">Core competencies built across internship, associate, and officer-level roles.</p>
-
-      <div class="line-item">
-        <div>
-          <h3>Billing &amp; Accounts Receivable</h3>
-          <div class="desc">Sales invoicing, statements of account, AR aging analysis, and collection coordination across large customer portfolios.</div>
-        </div>
-        <div class="tag">Core</div>
+    <div class="skills">
+      <div class="skill">
+        <h3>Billing &amp; Accounts Receivable</h3>
+        <p>Sales invoicing, statements of account, AR aging analysis, and collection coordination across large customer portfolios.</p>
       </div>
-      <div class="line-item">
-        <div>
-          <h3>Financial Reporting &amp; Reconciliation</h3>
-          <div class="desc">Monthly financial statements, bank reconciliations, and receivable reports for management visibility.</div>
-        </div>
-        <div class="tag">Core</div>
+      <div class="skill">
+        <h3>Financial Reporting &amp; Reconciliation</h3>
+        <p>Monthly financial statements, bank reconciliations, and receivable reports for management visibility.</p>
       </div>
-      <div class="line-item">
-        <div>
-          <h3>Payroll &amp; Tax Compliance</h3>
-          <div class="desc">End-to-end payroll processing and BIR-compliant bookkeeping with zero-error data integrity.</div>
-        </div>
-        <div class="tag">Core</div>
+      <div class="skill">
+        <h3>Payroll &amp; Tax Compliance</h3>
+        <p>End-to-end payroll processing and BIR-compliant bookkeeping with a focus on accurate transaction data.</p>
       </div>
-      <div class="line-item">
-        <div>
-          <h3>Systems &amp; Tools</h3>
-          <div class="desc">QuickBooks, Microsoft Dynamics NAV, in-house accounting systems, and advanced Excel (macros, VBA, formulas, AI tools).</div>
-        </div>
-        <div class="tag">Software</div>
+      <div class="skill">
+        <h3>Systems &amp; Tools</h3>
+        <p>QuickBooks, Microsoft Dynamics NAV, in-house accounting systems, and advanced Excel including macros, VBA, formulas, and AI tools.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="experience">
-    <div class="wrap">
-      <h2>Experience</h2>
-      <table class="statement">
-        <thead>
-          <tr><th>Period</th><th>Role</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="period">Jun 2026 — Present</td>
-            <td class="role">
-              <strong>Billing Officer</strong>
-              <span>Brenton International Venture Manufacturing Corporation</span>
-              <ul>
-                <li>Manage billing for 600+ customer accounts, issuing accurate Sales Invoices and Statements of Account.</li>
-                <li>Coordinate with customers to resolve billing discrepancies and support collections.</li>
-                <li>Monitor AR aging for credit-term sales and prepare receivable reports.</li>
-              </ul>
-            </td>
-          </tr>
-          <tr>
-            <td class="period">Sep 2025 — Jun 2026</td>
-            <td class="role">
-              <strong>Accounting Associate</strong>
-              <span>Sinag Pawnshop Corporation</span>
-              <ul>
-                <li>Managed full-cycle AR portfolios across leasing and loan divisions.</li>
-                <li>Generated monthly Financial Statements and Bank Reconciliations for management reporting.</li>
-                <li>Co-authored the internal Loans &amp; Rent Receivable Policy, streamlining credit evaluation.</li>
-              </ul>
-            </td>
-          </tr>
-          <tr>
-            <td class="period">Feb 2025 — May 2025</td>
-            <td class="role">
-              <strong>Accounting Intern</strong>
-              <span>NewFort Manpower Services Corp.</span>
-              <ul>
-                <li>Encoded daily transactions with 100% data integrity for zero-error BIR compliance.</li>
-                <li>Processed monthly payroll for 120+ employees with 100% on-time disbursement.</li>
-              </ul>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="wrap">
-      <div class="contact-box">
-        <h2>Let's connect.</h2>
-        <p>Open to accounting, billing, and AR opportunities. Reach out directly — I typically respond within a day.</p>
-        <div class="contact-links">
-          <a href="mailto:benedictcastrobc@gmail.com">benedictcastrobc@gmail.com</a>
-          <a href="tel:+639349958763">+63 934 995 8763</a>
-        </div>
+<section id="experience">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-number">03 — EXPERIENCE</div>
+      <div>
+        <h2>Professional experience.</h2>
+        <p class="section-intro">A progression from accounting operations and payroll into full-cycle receivables and billing management.</p>
       </div>
     </div>
-  </section>
+
+    <div class="experience">
+      <article class="job">
+        <div class="job-date">JUN 2026 — PRESENT</div>
+        <div>
+          <h3>Billing Officer</h3>
+          <div class="company">Brenton International Venture Manufacturing Corporation</div>
+          <ul>
+            <li>Manage billing for 600+ customer accounts, issuing accurate Sales Invoices and Statements of Account.</li>
+            <li>Coordinate with customers to resolve billing discrepancies and support collections.</li>
+            <li>Monitor AR aging for credit-term sales and prepare receivable reports.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="job">
+        <div class="job-date">SEP 2025 — JUN 2026</div>
+        <div>
+          <h3>Accounting Associate</h3>
+          <div class="company">Sinag Pawnshop Corporation</div>
+          <ul>
+            <li>Managed full-cycle AR portfolios across leasing and loan divisions.</li>
+            <li>Generated monthly Financial Statements and Bank Reconciliations for management reporting.</li>
+            <li>Co-authored the internal Loans &amp; Rent Receivable Policy, streamlining credit evaluation.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="job">
+        <div class="job-date">FEB 2025 — MAY 2025</div>
+        <div>
+          <h3>Accounting Intern</h3>
+          <div class="company">NewFort Manpower Services Corp.</div>
+          <ul>
+            <li>Encoded daily transactions with 100% data integrity for zero-error BIR compliance.</li>
+            <li>Processed monthly payroll for 120+ employees with 100% on-time disbursement.</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-box">
+      <h2>Let's connect.</h2>
+      <p>
+        Open to accounting, billing, and AR opportunities. Reach out directly —
+        I typically respond within a day.
+      </p>
+      <div class="contact-links">
+        <a href="mailto:benedictcastrobc@gmail.com">benedictcastrobc@gmail.com</a>
+        <a href="tel:+639349958763">+63 934 995 8763</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 </main>
 
 <footer>
-  <div class="wrap">
-    &copy; 2026 Benedict Delos Santos Castro.
+  <div class="wrap footer-inner">
+    <span>© 2026 Benedict Delos Santos Castro.</span>
+    <span>Billing · Accounts Receivable · Accounting</span>
   </div>
 </footer>
 
