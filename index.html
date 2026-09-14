@@ -1228,9 +1228,172 @@
         }
       }
 
+
+
+      /* 2026 INTERACTIVE ENHANCEMENTS — keeps the existing palette and content. */
+      :root { --ease-out: cubic-bezier(.22,1,.36,1); }
+      body { overflow-x: hidden; }
+      .site-header { z-index: 50; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+      .scroll-progress { position: fixed; inset: 0 auto auto 0; width: 0; height: 3px; z-index: 80; background: var(--accent); transform-origin: left center; pointer-events: none; }
+      .menu-toggle { display: none; width: 44px; height: 44px; border: 1px solid var(--line); background: transparent; color: var(--primary); border-radius: 999px; cursor: pointer; align-items: center; justify-content: center; padding: 0; }
+      .menu-toggle-lines, .menu-toggle-lines::before, .menu-toggle-lines::after { width: 18px; height: 1.5px; background: currentColor; display: block; position: relative; transition: transform 220ms var(--ease-out), opacity 180ms ease; }
+      .menu-toggle-lines::before, .menu-toggle-lines::after { content: ''; position: absolute; left: 0; }
+      .menu-toggle-lines::before { top: -6px; } .menu-toggle-lines::after { top: 6px; }
+      .menu-toggle[aria-expanded="true"] .menu-toggle-lines { background: transparent; }
+      .menu-toggle[aria-expanded="true"] .menu-toggle-lines::before { top: 0; transform: rotate(45deg); }
+      .menu-toggle[aria-expanded="true"] .menu-toggle-lines::after { top: 0; transform: rotate(-45deg); }
+      nav a { position: relative; }
+      nav a:not(.nav-contact)::after { content: ''; position: absolute; left: 0; right: 100%; bottom: -6px; height: 1px; background: var(--accent); transition: right 220ms var(--ease-out); }
+      nav a[aria-current="true"] { color: var(--accent); }
+      nav a[aria-current="true"]::after { right: 0; }
+
+      .hero { position: relative; isolation: isolate; min-height: min(760px, calc(100svh - 90px)); align-items: center; }
+      .hero::before, .hero::after { content: ''; position: absolute; z-index: -1; pointer-events: none; border: 1px solid var(--line); border-radius: 50%; opacity: .7; }
+      .hero::before { width: clamp(240px,34vw,500px); aspect-ratio: 1; right: -15%; top: 3%; }
+      .hero::after { width: clamp(150px,22vw,310px); aspect-ratio: 1; left: -12%; bottom: 0; border-style: dashed; opacity: .38; }
+      .hero-copy { position: relative; }
+      .hero-copy::after { content: ''; position: absolute; width: 72px; height: 72px; right: 3%; top: -20px; border-radius: 50% 50% 8% 50%; background: var(--bg); z-index: -1; transform: rotate(24deg); }
+      h1 { font-size: clamp(44px, 5.7vw, 72px); text-wrap: balance; }
+      .section-heading h2 { font-size: clamp(34px,4.4vw,52px); }
+
+      .role { position: relative; }
+      #experience .role::before { content: ''; position: absolute; left: -19px; top: 10px; width: 9px; height: 9px; border-radius: 50%; background: var(--surface); border: 2px solid var(--accent); z-index: 2; }
+      #experience .role::after { content: ''; position: absolute; left: -14px; top: 20px; bottom: -28px; width: 1px; background: var(--line); }
+      #experience .role:last-child::after { display: none; }
+      .project-card { transform-style: preserve-3d; will-change: transform; transition: transform 300ms var(--ease-out), box-shadow 300ms var(--ease-out); }
+      .project-card > * { transform: translateZ(0); }
+      .tags li, .project-tools li { transition: transform 220ms var(--ease-out); }
+      .social-link { position: relative; border-radius: 50%; }
+      .social-link::after { content: attr(title); position: absolute; left: 50%; bottom: calc(100% + 9px); transform: translate(-50%,5px); white-space: nowrap; padding: 5px 8px; border-radius: 5px; background: var(--primary); color: var(--button-text); font-size: 10px; letter-spacing: .03em; opacity: 0; pointer-events: none; transition: opacity 160ms ease, transform 160ms ease; }
+      @media (hover:hover) and (pointer:fine) { .social-link[title]:hover::after { opacity: 1; transform: translate(-50%,0); } .project-card:hover { box-shadow: 0 18px 45px rgba(53,27,25,.10); } }
+
+      .back-to-top { position: fixed; right: clamp(18px,3vw,34px); bottom: clamp(18px,3vw,34px); width: 46px; height: 46px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 50%; background: var(--surface); color: var(--primary); box-shadow: 0 8px 26px rgba(53,27,25,.10); z-index: 45; opacity: 0; visibility: hidden; transform: translateY(10px); transition: opacity 220ms ease, transform 220ms var(--ease-out), visibility 220ms; }
+      .back-to-top.is-visible { opacity: 1; visibility: visible; transform: translateY(0); }
+      .back-to-top:hover { transform: translateY(-3px); }
+
+      @media (max-width: 760px) {
+        html { scroll-padding-top: 78px; }
+        .header-inner { min-height: 72px; padding-top: 12px; padding-bottom: 12px; flex-wrap: nowrap; }
+        .menu-toggle { display: inline-flex; margin-left: auto; flex: 0 0 auto; }
+        .site-header nav { position: absolute; top: calc(100% + 1px); left: 0; right: 0; width: auto; padding: 14px 22px 20px; background: var(--header); border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 1fr 1fr; gap: 4px 12px; opacity: 0; visibility: hidden; transform: translateY(-8px); pointer-events: none; transition: opacity 180ms ease, transform 220ms var(--ease-out), visibility 180ms; box-shadow: 0 12px 30px rgba(53,27,25,.06); }
+        .site-header nav.is-open { opacity: 1; visibility: visible; transform: translateY(0); pointer-events: auto; }
+        .site-header nav a { padding: 10px 4px; }
+        .site-header nav .theme-toggle { justify-self: end; }
+        .hero { min-height: auto; padding-top: 56px; }
+        .hero::before { right: -35%; top: 8%; } .hero::after { left: -30%; }
+        .hero-copy::after { width: 52px; height: 52px; right: 0; }
+        #experience .role::before, #experience .role::after { display: none; }
+      }
+      @media (max-width: 430px) {
+        .brand > span:last-child { font-size: 14px; }
+        .monogram { width: 40px; height: 40px; }
+        .site-header nav { grid-template-columns: 1fr; }
+        .site-header nav .theme-toggle { justify-self: start; margin-top: 4px; }
+        h1 { font-size: clamp(39px,12vw,50px); }
+        .actions { align-items: stretch; }
+        .actions .button { width: 100%; justify-content: center; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        .menu-toggle-lines, .menu-toggle-lines::before, .menu-toggle-lines::after, .site-header nav, nav a::after, .project-card, .back-to-top, .social-link::after { transition: none !important; }
+        .hero::after { border-style: solid; }
+      }
+
+
+      /* MOBILE NAV + CONTACT + THEME ICON FIXES */
+      .theme-icon{
+        width:18px;height:18px;display:inline-block;position:relative;flex:0 0 18px;
+      }
+      .theme-icon::before,.theme-icon::after{content:"";position:absolute;box-sizing:border-box}
+      /* Default button offers dark mode: a monochrome moon drawn with CSS, not an emoji. */
+      .theme-icon::before{
+        width:14px;height:14px;border:1.8px solid currentColor;border-radius:50%;
+        left:1px;top:1px;
+      }
+      .theme-icon::after{
+        width:12px;height:12px;border-radius:50%;background:var(--surface);
+        left:6px;top:-1px;
+      }
+      :root[data-theme="dark"] .theme-icon::before{
+        width:14px;height:14px;border:1.6px solid currentColor;border-radius:50%;
+        left:2px;top:2px;box-shadow:
+          0 -7px 0 -6px currentColor,0 7px 0 -6px currentColor,
+          7px 0 0 -6px currentColor,-7px 0 0 -6px currentColor,
+          5px 5px 0 -6px currentColor,-5px -5px 0 -6px currentColor,
+          5px -5px 0 -6px currentColor,-5px 5px 0 -6px currentColor;
+      }
+      :root[data-theme="dark"] .theme-icon::after{display:none}
+
+      .contact-detail-list{display:grid;gap:12px;width:100%}
+      .contact-detail{
+        display:grid;grid-template-columns:92px minmax(0,1fr) auto;gap:16px;align-items:center;
+        width:100%;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.18);
+        color:#fff;text-decoration:none;
+      }
+      .contact-detail:last-child{border-bottom:0}
+      .contact-detail-label{
+        color:#d8c4a7;font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;
+      }
+      .contact-detail-value{font-size:clamp(14px,1.65vw,18px);line-height:1.45;overflow-wrap:anywhere}
+      .contact-detail-mark{
+        width:28px;height:28px;border:1px solid rgba(255,255,255,.28);border-radius:50%;
+        display:grid;place-items:center;font-size:14px;line-height:1;color:#fff;
+      }
+      .contact-detail-static .contact-detail-mark{opacity:.55}
+      @media (hover:hover) and (pointer:fine){
+        a.contact-detail:hover{transform:translateX(4px)}
+        a.contact-detail:hover .contact-detail-mark{background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.55)}
+      }
+
+      @media (max-width:760px){
+        .site-header{overflow:visible}
+        .header-inner{position:relative}
+        .site-header nav{
+          position:fixed;
+          top:72px;left:14px;right:14px;width:auto;
+          max-height:calc(100svh - 90px);overflow:auto;
+          padding:12px;
+          background:var(--surface);
+          border:1px solid var(--line);border-radius:16px;
+          display:flex;flex-direction:column;align-items:stretch;gap:2px;
+          opacity:0;visibility:hidden;transform:translateY(-8px) scale(.985);
+          transform-origin:top right;pointer-events:none;
+          box-shadow:0 18px 45px rgba(30,20,16,.16);
+          z-index:100;
+        }
+        .site-header nav.is-open{
+          display:flex !important;
+          opacity:1 !important;
+          visibility:visible !important;
+          transform:translateY(0) scale(1) !important;
+          pointer-events:auto !important;
+          z-index:9999;
+        }
+        .site-header nav a{
+          width:100%;padding:12px 14px;border-radius:10px;
+        }
+        .site-header nav a::after{display:none}
+        .site-header nav a[aria-current="true"]{background:var(--bg)}
+        .site-header nav .theme-toggle{
+          width:100%;justify-content:flex-start;margin:6px 0 0;padding:11px 14px;border-radius:10px;
+        }
+        body.menu-open{overflow:hidden}
+        .contact{padding:58px 0}
+        .contact-grid{grid-template-columns:1fr;gap:30px;align-items:start}
+        .contact h2{font-size:clamp(46px,15vw,64px)}
+        .contact-detail{grid-template-columns:76px minmax(0,1fr) auto;gap:10px;padding:14px 0}
+      }
+      @media (max-width:430px){
+        .contact-detail{grid-template-columns:1fr auto;gap:4px 12px}
+        .contact-detail-label{grid-column:1}
+        .contact-detail-value{grid-column:1}
+        .contact-detail-mark{grid-column:2;grid-row:1 / span 2}
+      }
+
     </style>
   </head>
   <body>
+    <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
     <!-- Standalone portfolio. Edit the content below to update experience and skills. -->
     <a class="skip" href="#main">Skip to content</a>
     <header class="site-header">
@@ -1238,8 +1401,9 @@
         <a class="brand" href="#home" aria-label="Benedict Castro home">
           <span class="monogram">BC</span><span>Benedict Castro<span class="brand-sub">ACCOUNTING PROFESSIONAL</span></span>
         </a>
-        <nav aria-label="Main navigation">
-          <a href="#experience">Experience</a><a href="#project">Project</a><a href="#skills">Skills</a><a class="nav-contact" href="#contact">Let’s talk <span aria-hidden="true">↗</span></a>
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Open navigation menu" onclick="toggleMobileNav()"><span class="menu-toggle-lines" aria-hidden="true"></span></button>
+        <nav id="main-nav" aria-label="Main navigation">
+          <a href="#experience">Experience</a><a href="#project">Project</a><a href="#skills">Skills</a><a class="nav-contact" href="#contact">Let’s talk <span aria-hidden="true">↗︎</span></a>
           <!-- Theme button: the label names the mode selected on click. -->
           <button
             id="theme-toggle"
@@ -1248,7 +1412,7 @@
             aria-label="Switch to dark mode"
             hidden
           >
-            <span class="theme-icon" aria-hidden="true">☾</span>
+            <span class="theme-icon" aria-hidden="true"></span>
             <span class="theme-label">Dark</span>
           </button>
         </nav>
@@ -1269,7 +1433,7 @@
             Accounting professional with experience in accounts receivable, billing, bookkeeping, financial reporting, bank reconciliation, and feasibility analysis. Background spans leasing, lending, manufacturing, and feasibility study services, with a strong focus on maintaining financial accuracy, streamlining accounting processes, and delivering reliable financial reports and analysis to support business decision-making.
           </p>
           <div class="actions">
-            <a class="button primary" href="#contact">Discuss an opportunity <span aria-hidden="true">↗</span></a><a class="button secondary" href="#project">Explore the project <span aria-hidden="true">↓</span></a>
+            <a class="button primary" href="#contact">Discuss an opportunity <span aria-hidden="true">↗︎</span></a><a class="button secondary" href="#project">Explore the project <span aria-hidden="true">↓</span></a>
           </div>
 
         </div>
@@ -2429,7 +2593,7 @@ KSU6IBwcLUBUFR5EwUbrYmeqsG261WG7267Wq6ZtnSe352Eczz0ThxklDXwiTJPZvXv37uH+/nQ8cuWi
           <div class="portrait-caption">
             <span class="eyebrow">A PRACTICAL ACCOUNTING APPROACH</span>
             <p class="portrait-statement">Accurate records. Clearer reports.<br>Better workflows.</p>
-          <!-- SOCIAL LINKS: update the Facebook placeholder when its URL is available. -->
+          <!-- SOCIAL LINKS -->
           <div class="social-links" role="group" aria-label="Connect with Benedict">
             <a
               class="social-link"
@@ -2455,13 +2619,19 @@ KSU6IBwcLUBUFR5EwUbrYmeqsG261WG7267Wq6ZtnSe352Eczz0ThxklDXwiTJPZvXv37uH+/nQ8cuWi
               </svg>
               <span class="sr-only">LinkedIn</span>
             </a>
-            <!-- Not a link until a Facebook profile URL is provided. -->
-            <span class="social-link social-pending" aria-disabled="true" title="Facebook — link coming soon">
+            <a
+              class="social-link"
+              title="Facebook"
+              href="https://www.facebook.com/share/1Jr77HxbWq/?mibextid=wwXIfr"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Benedict Castro on Facebook (opens in a new tab)"
+            >
               <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                 <path fill="currentColor" d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.23.2 2.23.2v2.45h-1.26c-1.24 0-1.62.77-1.62 1.56V12h2.77l-.44 2.89h-2.33v6.99A10 10 0 0 0 22 12Z"/>
               </svg>
-              <span class="sr-only">Facebook — link coming soon</span>
-            </span>
+              <span class="sr-only">Facebook</span>
+            </a>
           </div>
           </div>
         </aside>
@@ -3227,24 +3397,35 @@ KSU6IBwcLUBUFR5EwUbrYmeqsG261WG7267Wq6ZtnSe352Eczz0ThxklDXwiTJPZvXv37uH+/nQ8cuWi
             <h2>Let’s talk<span>.</span></h2>
             <p>For accounting opportunities<br>and freelance inquiries.</p>
           </div>
-          <address>
-            <a class="email" href="mailto:benedictcastrobc@gmail.com">
-              benedictcastrobc@gmail.com <span aria-hidden="true">↗</span>
+          <address class="contact-detail-list">
+            <a class="contact-detail" href="mailto:benedictcastrobc@gmail.com">
+              <span class="contact-detail-label">Email</span>
+              <span class="contact-detail-value">benedictcastrobc@gmail.com</span>
+              <span class="contact-detail-mark" aria-hidden="true">↗︎</span>
             </a>
-            <a href="tel:+639349958763">0934 995 8763</a>
-            <p>219 Dalig Rd., Borol 2nd,<br>Balagtas, Bulacan</p>
-            <a
+            <a class="contact-detail" href="tel:+639349958763">
+              <span class="contact-detail-label">Phone</span>
+              <span class="contact-detail-value">0934 995 8763</span>
+              <span class="contact-detail-mark" aria-hidden="true">→</span>
+            </a>
+            <div class="contact-detail contact-detail-static">
+              <span class="contact-detail-label">Location</span>
+              <span class="contact-detail-value">219 Dalig Rd., Borol 2nd,<br>Balagtas, Bulacan</span>
+              <span class="contact-detail-mark" aria-hidden="true">•</span>
+            </div>
+            <a class="contact-detail"
               href="https://www.linkedin.com/in/benedict-castro-accounting"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="View Benedict Castro on LinkedIn (opens in a new tab)"
-            >
-              LinkedIn <span aria-hidden="true">↗</span>
+              target="_blank" rel="noopener noreferrer"
+              aria-label="View Benedict Castro on LinkedIn (opens in a new tab)">
+              <span class="contact-detail-label">Profile</span>
+              <span class="contact-detail-value">LinkedIn</span>
+              <span class="contact-detail-mark" aria-hidden="true">↗︎</span>
             </a>
           </address>
         </div>
       </section>
     </main>
+    <a class="back-to-top" id="back-to-top" href="#home" aria-label="Back to top">↑</a>
     <footer class="wrap">
       <span>Benedict Castro</span><a href="#home">Back to top ↑</a>
     </footer>
@@ -3270,7 +3451,6 @@ KSU6IBwcLUBUFR5EwUbrYmeqsG261WG7267Wq6ZtnSe352Eczz0ThxklDXwiTJPZvXv37uH+/nQ8cuWi
           root.dataset.theme = theme;
           const isDark = theme === 'dark';
           label.textContent = isDark ? 'Light' : 'Dark';
-          icon.textContent = isDark ? '☀' : '☾';
           button.setAttribute('aria-label', isDark
             ? 'Switch to light mode'
             : 'Switch to dark mode');
@@ -3376,5 +3556,111 @@ KSU6IBwcLUBUFR5EwUbrYmeqsG261WG7267Wq6ZtnSe352Eczz0ThxklDXwiTJPZvXv37uH+/nQ8cuWi
         window.addEventListener('beforeprint', stopAnimations);
       })();
     </script>
+
+    <!-- INTERACTIONS: mobile menu, active section, progress, back-to-top, staggered reveals and restrained card tilt. -->
+    <script>
+      function toggleMobileNav() {
+        const nav = document.getElementById('main-nav');
+        const button = document.getElementById('menu-toggle');
+        if (!nav || !button) return;
+        const open = !nav.classList.contains('is-open');
+        nav.classList.toggle('is-open', open);
+        document.body.classList.toggle('menu-open', open);
+        button.setAttribute('aria-expanded', String(open));
+        button.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+      }
+
+      (() => {
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        const menuButton = document.getElementById('menu-toggle');
+        const nav = document.getElementById('main-nav');
+        const progress = document.getElementById('scroll-progress');
+        const backTop = document.getElementById('back-to-top');
+        const navLinks = [...nav.querySelectorAll('a[href^="#"]')];
+
+        function closeMenu() {
+          nav.classList.remove('is-open');
+          document.body.classList.remove('menu-open');
+          menuButton.setAttribute('aria-expanded', 'false');
+          menuButton.setAttribute('aria-label', 'Open navigation menu');
+        }
+        navLinks.forEach(link => link.addEventListener('click', closeMenu));
+        window.addEventListener('resize', () => { if (innerWidth > 760) closeMenu(); });
+        document.addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });
+        document.addEventListener('click', event => {
+          if (nav.classList.contains('is-open') && !nav.contains(event.target) && !menuButton.contains(event.target)) closeMenu();
+        });
+
+        let ticking = false;
+        function updateScrollUI() {
+          const max = document.documentElement.scrollHeight - innerHeight;
+          progress.style.width = (max > 0 ? (scrollY / max) * 100 : 0) + '%';
+          backTop.classList.toggle('is-visible', scrollY > 520);
+          ticking = false;
+        }
+        addEventListener('scroll', () => {
+          if (!ticking) { requestAnimationFrame(updateScrollUI); ticking = true; }
+        }, { passive: true });
+        updateScrollUI();
+
+        const sections = [...document.querySelectorAll('main section[id]')];
+        if ('IntersectionObserver' in window) {
+          const sectionObserver = new IntersectionObserver(entries => {
+            const visible = entries.filter(e => e.isIntersecting).sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
+            if (!visible) return;
+            navLinks.forEach(link => {
+              const active = link.getAttribute('href') === '#' + visible.target.id;
+              if (active) link.setAttribute('aria-current', 'true'); else link.removeAttribute('aria-current');
+            });
+          }, { rootMargin: '-25% 0px -60% 0px', threshold: [0, .1, .3] });
+          sections.forEach(section => sectionObserver.observe(section));
+        }
+
+        if (!reduceMotion.matches && Element.prototype.animate) {
+          const heroItems = document.querySelectorAll('.hero-copy .eyebrow, .hero-copy h1, .hero-copy .headline, .hero-copy > p:not(.eyebrow):not(.headline), .hero-copy .actions, .hero-aside');
+          heroItems.forEach((item, index) => item.animate([
+            { opacity: 0, transform: index === heroItems.length - 1 ? 'translateX(18px) scale(.985)' : 'translateY(18px)' },
+            { opacity: 1, transform: 'translate(0,0) scale(1)' }
+          ], { duration: 620, delay: 90 + index * 80, easing: 'cubic-bezier(.22,1,.36,1)', fill: 'backwards' }));
+        }
+
+        if (!reduceMotion.matches && 'IntersectionObserver' in window && Element.prototype.animate) {
+          const revealGroups = document.querySelectorAll('.service-grid, .competency-grid, .skill-grid, .education-grid, .contact-grid');
+          const revealObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+              if (!entry.isIntersecting) return;
+              revealObserver.unobserve(entry.target);
+              [...entry.target.children].forEach((child, index) => child.animate([
+                { opacity: .45, transform: `translateY(${16 + Math.min(index,4)*2}px) scale(.992)` },
+                { opacity: 1, transform: 'translateY(0) scale(1)' }
+              ], { duration: 520, delay: Math.min(index,6) * 65, easing: 'cubic-bezier(.22,1,.36,1)' }));
+            });
+          }, { rootMargin: '0px 0px -45px', threshold: .08 });
+          revealGroups.forEach(group => revealObserver.observe(group));
+        }
+
+        if (!reduceMotion.matches && matchMedia('(hover:hover) and (pointer:fine)').matches) {
+          document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('pointermove', event => {
+              const r = card.getBoundingClientRect();
+              const x = (event.clientX - r.left) / r.width - .5;
+              const y = (event.clientY - r.top) / r.height - .5;
+              card.style.transform = `perspective(1000px) rotateX(${-y*2.2}deg) rotateY(${x*2.2}deg) translateY(-3px)`;
+            });
+            card.addEventListener('pointerleave', () => { card.style.transform = ''; });
+          });
+          document.querySelectorAll('.button').forEach(button => {
+            button.addEventListener('pointermove', event => {
+              const r = button.getBoundingClientRect();
+              const x = (event.clientX - r.left - r.width/2) * .045;
+              const y = (event.clientY - r.top - r.height/2) * .045;
+              button.style.transform = `translate(${x}px, ${y}px)`;
+            });
+            button.addEventListener('pointerleave', () => { button.style.transform = ''; });
+          });
+        }
+      })();
+    </script>
+
   </body>
 </html>
