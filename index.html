@@ -1,324 +1,253 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Benedict Castro — accounting professional focused on accounts receivable, financial reporting, feasibility analysis, and Excel/VBA automation.">
-  <meta name="theme-color" content="#351b19">
-  <title>Benedict Castro | Accounting Information Systems Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@90..110,400..900&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <script defer src="script.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#091523">
+  <title>Benedict Castro — Accounting, Analysis & Automation</title>
+  <meta name="description" content="Benedict Delos Santos Castro. Accounting professional translating financial operations into accurate records, clearer reporting, and better workflows.">
+  <meta property="og:title" content="Benedict Castro — Accounting, Analysis & Automation">
+  <meta property="og:description" content="Explore my accounting experience, financial analysis, and practical Excel automation projects.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23091523'/%3E%3Ctext x='32' y='41' font-family='Arial,sans-serif' font-size='27' font-weight='700' text-anchor='middle' fill='%23e4edf6'%3EBC%3C/text%3E%3C/svg%3E">
+  <link rel="preload" href="assets/fonts/manrope-800.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="assets/benedict-hero.webp" as="image" fetchpriority="high">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script>try{if(localStorage.getItem('bc-portfolio-theme')==='dark')document.documentElement.dataset.theme='dark'}catch(e){}</script>
+  <script src="assets/main.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <div class="scroll-meter" aria-hidden="true"><span id="scrollMeter"></span></div>
+  <svg class="icon-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 19 19 5M5 5h14v14"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4v15m-6-6 6 6 6-6"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 16v4h16v-4"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><path d="M3 19V5l9 7 9-7v14M3 5l9 7 9-7M6 19v-8m12 8v-8"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="m8 3 3 5-3 3a17 17 0 0 0 5 5l3-3 5 3-1 4c-1 3-8 0-12-4S1 5 4 4l4-1Z"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M4.9 3a2.1 2.1 0 1 0 0 4.2A2.1 2.1 0 0 0 4.9 3ZM3 9h4v12H3V9Zm6 0h3.8v1.6h.1c.5-1 1.8-1.9 3.7-1.9 4 0 4.4 2.4 4.4 5.5V21h-4v-6c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V21H9V9Z"/></symbol>
+    <symbol id="i-facebook" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M14.4 22v-9.1h3.1l.5-3.6h-3.6V7c0-1 .3-1.8 1.8-1.8H18V2.1a23 23 0 0 0-2.7-.1c-2.7 0-4.5 1.6-4.5 4.6v2.7H8v3.6h2.8V22h3.6Z"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 13a9 9 0 0 1-10-10A9 9 0 1 0 21 13Z"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M12 5v15m0-15C9 3 5 3 2 4v15c3-1 7-1 10 1 3-2 7-2 10-1V4c-3-1-7-1-10 1Z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+  </svg>
 
-  <header class="site-header" id="siteHeader">
-    <div class="nav-shell">
-      <a class="brand" href="#home" aria-label="Benedict Castro home">
-        <span class="brand-mark">BC</span>
-        <span class="brand-copy">
-          <strong>Benedict Castro</strong>
-          <small>Accounting Information Systems</small>
-        </span>
+  <header class="site-header" id="site-header">
+    <div class="nav-wrap container">
+      <a href="#home" class="brand" aria-label="Benedict Castro, home">
+        <span class="brand-mark">BC<span class="mark-dot">.</span></span>
+        <span class="brand-text">Benedict Castro<small>Accounting professional</small></span>
       </a>
-
-      <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="siteNav">
-        <span></span><span></span>
-        <span class="sr-only">Toggle navigation</span>
-      </button>
-
-      <nav class="site-nav" id="siteNav" aria-label="Primary navigation">
-        <a href="#profile">Profile</a>
-        <a href="#experience">Experience</a>
-        <a href="#work">Work</a>
-        <a href="#skills">Skills</a>
-        <a class="nav-cta" href="#contact">Let’s talk <span aria-hidden="true">↗</span></a>
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="#experience" data-nav="experience">Experience</a>
+        <a href="#project" data-nav="project">Projects</a>
+        <a href="#skills" data-nav="skills">Skills</a>
       </nav>
+      <div class="nav-actions">
+        <a href="#contact" class="nav-contact">Let’s talk <svg class="icon"><use href="#i-arrow"/></svg></a>
+        <button class="icon-button theme-toggle" type="button" aria-label="Switch to dark theme" title="Switch theme"><svg class="icon moon-icon"><use href="#i-moon"/></svg><svg class="icon sun-icon"><use href="#i-sun"/></svg></button>
+        <button class="menu-toggle icon-button" type="button" aria-controls="mobile-nav" aria-expanded="false" aria-label="Open navigation"><span></span><span></span></button>
+      </div>
     </div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" hidden>
+      <a href="#about">About me</a><a href="#experience">Experience</a><a href="#project">Projects</a><a href="#skills">Capabilities</a><a href="#education">Education</a><a href="#contact">Let’s talk</a>
+    </nav>
+    <div class="reading-progress" aria-hidden="true"></div>
   </header>
 
   <main id="main">
-    <section class="hero" id="home">
-      <div class="hero-grid-pattern" aria-hidden="true"></div>
-      <div class="hero-orbit orbit-one" aria-hidden="true"></div>
-      <div class="hero-orbit orbit-two" aria-hidden="true"></div>
-
-      <div class="hero-inner">
-        <div class="hero-copy reveal">
-          <p class="kicker"><span></span> Accounting · Analysis · Automation</p>
-          <h1>
-            <span class="hero-line">BENEDICT</span>
-            <span class="hero-line outline">CASTRO</span>
-          </h1>
-          <p class="hero-lede">Accounting professional translating financial operations into accurate records, clearer reporting, and better workflows.</p>
-          <div class="hero-actions">
-            <a class="button button-solid" href="#work">View selected work <span aria-hidden="true">↓</span></a>
-            <a class="button button-ghost" href="mailto:benedictcastrobc@gmail.com">Email me <span aria-hidden="true">↗</span></a>
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <img class="hero-image" src="assets/benedict-hero.webp" alt="Benedict Delos Santos Castro in a navy suit against a navy-to-gray background" width="1920" height="1080" fetchpriority="high">
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow hero-enter">Accounting · Analysis · Automation</p>
+          <h1 id="hero-title" aria-label="Benedict Delos Santos Castro"><span class="name-line"><span>Benedict</span></span><span class="name-line name-middle"><span>Delos Santos</span></span><span class="name-line"><span>Castro<span class="name-period">.</span></span></span></h1>
+          <p class="hero-intro hero-enter">Accounting professional translating financial operations into accurate records, clearer reporting, and better workflows.</p>
+          <div class="hero-actions hero-enter">
+            <a class="button cv-button" href="assets/Benedict_Castro_CV.pdf" download="Benedict_Castro_CV.pdf">Download CV <svg class="icon"><use href="#i-download"/></svg></a>
+            <div class="social-links" aria-label="Contact and social links">
+              <a class="social-icon" href="mailto:benedictcastrobc@gmail.com" aria-label="Email Benedict at benedictcastrobc@gmail.com" data-label="Gmail"><svg class="icon"><use href="#i-mail"/></svg></a>
+              <a class="social-icon" href="https://www.facebook.com/share/1Jr77HxbWq/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook, opens in a new tab" data-label="Facebook"><svg class="icon"><use href="#i-facebook"/></svg></a>
+              <a class="social-icon" href="https://www.linkedin.com/in/benedict-castro-accounting" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn, opens in a new tab" data-label="LinkedIn"><svg class="icon"><use href="#i-linkedin"/></svg></a>
+              <a class="social-icon" href="tel:+639349958763" aria-label="Call Benedict at 0934 995 8763" data-label="0934 995 8763"><svg class="icon"><use href="#i-phone"/></svg></a>
+            </div>
           </div>
         </div>
-
-        <aside class="hero-panel reveal" aria-label="Professional focus">
-          <div class="hero-panel-top">
-            <span class="panel-index">01</span>
-            <span class="status"><i></i> Open to accounting opportunities</span>
-          </div>
-          <p class="panel-statement">Accounts receivable. Financial reporting. Feasibility analysis. Excel automation.</p>
-          <div class="panel-divider"></div>
-          <dl class="panel-facts">
-            <div><dt>Based in</dt><dd>Bulacan, Philippines</dd></div>
-            <div><dt>Degree</dt><dd>BS Accounting Information Systems</dd></div>
-            <div><dt>Current focus</dt><dd>Billing + feasibility analysis</dd></div>
-          </dl>
-        </aside>
-      </div>
-
-      <div class="hero-footer">
-        <p>Systems-minded accounting for real operational work.</p>
-        <a href="#profile">Scroll to explore <span aria-hidden="true">↓</span></a>
+        <div class="hero-footer hero-enter">
+          <div class="role-keywords"><span>Accounting Professional</span><span>Accounts Receivable</span><span>Financial Reporting</span><span>Financial Analysis</span></div>
+          <a class="scroll-cue" href="#about"><span>Explore the portfolio</span><span class="scroll-orbit"><svg class="icon"><use href="#i-down"/></svg></span></a>
+        </div>
       </div>
     </section>
 
-    <div class="ticker" aria-hidden="true">
-      <div class="ticker-track">
-        <span>ACCOUNTS RECEIVABLE</span><b>•</b><span>FINANCIAL REPORTING</span><b>•</b><span>EXCEL VBA</span><b>•</b><span>FEASIBILITY ANALYSIS</span><b>•</b><span>BILLING</span><b>•</b><span>BANK RECONCILIATION</span><b>•</b>
-        <span>ACCOUNTS RECEIVABLE</span><b>•</b><span>FINANCIAL REPORTING</span><b>•</b><span>EXCEL VBA</span><b>•</b><span>FEASIBILITY ANALYSIS</span><b>•</b><span>BILLING</span><b>•</b><span>BANK RECONCILIATION</span><b>•</b>
-      </div>
-    </div>
-
-    <section class="section section-light" id="profile">
-      <div class="wrap two-col-intro">
-        <div class="section-label reveal"><span>02</span> Profile</div>
-        <div class="profile-copy reveal">
-          <p class="display-copy">I work where <em>accounting logic</em>, operational detail, and simple automation meet.</p>
-          <div class="profile-columns">
-            <p>I am an accounting professional with experience in accounts receivable, billing, bookkeeping, financial reporting, bank reconciliation, and feasibility analysis. My background spans leasing, lending, manufacturing, and feasibility-study services.</p>
-            <p>As a BS Accounting Information Systems graduate, I use Excel formulas, PivotTables, VBA/macros, and AI-assisted tools to streamline repetitive work, improve reporting, and make financial information easier to use.</p>
+    <section class="section profile-section" id="about" aria-labelledby="profile-title">
+      <div class="container">
+        <div class="profile-top">
+          <p class="section-label reveal"><span>02</span> About me / Profile</p>
+          <div>
+            <h2 class="display-heading reveal" id="profile-title">I work where accounting logic, operational detail, and <span class="muted-heading">simple automation meet.</span></h2>
+            <div class="profile-prose">
+              <p class="reveal">Accounting professional with experience in accounts receivable, billing, bookkeeping, financial reporting, bank reconciliation, and feasibility analysis. Background spans leasing, lending, manufacturing, and feasibility study services, with a strong focus on maintaining financial accuracy, streamlining accounting processes, and delivering reliable financial reports and analysis to support business decision-making.</p>
+              <p class="reveal">As a BS Accounting Information Systems graduate, I use Excel formulas, PivotTables, VBA/macros, and AI-assisted tools to streamline repetitive work, improve reporting, and make financial information easier to use.</p>
+            </div>
           </div>
         </div>
-      </div>
-
-      <div class="wrap service-grid">
-        <article class="service-card reveal">
-          <span class="service-no">01</span>
-          <h2>Accounting Operations</h2>
-          <p>Billing, receivables monitoring, bookkeeping, reconciliation, payroll support, and compliance-focused recordkeeping.</p>
-        </article>
-        <article class="service-card reveal">
-          <span class="service-no">02</span>
-          <h2>Financial Analysis</h2>
-          <p>Financial statements, feasibility-study analysis, projections, profitability review, and clear discussion of assumptions and findings.</p>
-        </article>
-        <article class="service-card reveal">
-          <span class="service-no">03</span>
-          <h2>Workflow Automation</h2>
-          <p>Excel-based tools that reduce repetitive encoding, organize source data, generate reports, and support more consistent accounting processes.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="numbers-section" aria-label="Selected figures">
-      <div class="wrap numbers-grid">
-        <article class="number-card reveal"><strong data-count="600" data-suffix="+">0</strong><span>assigned customer accounts handled in billing</span></article>
-        <article class="number-card reveal"><strong data-count="9">0</strong><span>leasing and lending entities handled in prior accounting work</span></article>
-        <article class="number-card reveal"><strong data-count="120" data-suffix="+">0</strong><span>employees supported in payroll during internship</span></article>
-        <article class="number-card reveal"><strong data-count="3">0</strong><span>featured accounting automation case studies</span></article>
-      </div>
-    </section>
-
-    <section class="section section-paper" id="experience">
-      <div class="wrap experience-layout">
-        <div class="experience-heading reveal">
-          <div class="section-label"><span>03</span> Experience</div>
-          <h2>Accounting work across operations, reporting, and analysis.</h2>
-          <p>Selected professional experience from feasibility studies, manufacturing billing, leasing and lending, and accounting support.</p>
+        <div class="expertise-grid">
+          <article class="expertise-card reveal"><span class="card-index">01 / Operations</span><h3>Accounting<br>Operations</h3><p>Billing, receivables monitoring, bookkeeping, reconciliation, payroll support, and compliance-focused recordkeeping.</p><span class="card-rule" aria-hidden="true"></span></article>
+          <article class="expertise-card reveal"><span class="card-index">02 / Insight</span><h3>Financial<br>Analysis</h3><p>Financial statements, feasibility-study analysis, projections, profitability review, and clear discussion of assumptions and findings.</p><span class="card-rule" aria-hidden="true"></span></article>
+          <article class="expertise-card reveal"><span class="card-index">03 / Improvement</span><h3>Workflow<br>Automation</h3><p>Excel-based tools that reduce repetitive encoding, organize source data, generate reports, and support more consistent accounting processes.</p><span class="card-rule" aria-hidden="true"></span></article>
         </div>
+      </div>
+    </section>
 
-        <div class="timeline">
-          <article class="timeline-item reveal">
-            <div class="timeline-meta"><span>Aug 2026 — Present</span><small>Part-time</small></div>
-            <div class="timeline-copy">
-              <h3>Feasibility Accountant</h3>
-              <p class="company">Feasib Accountant</p>
-              <p>Prepare the financial aspect of feasibility studies, develop financial analysis and reports, and discuss assumptions, results, and findings with clients.</p>
-            </div>
+    <section class="section experience-section" id="experience" aria-labelledby="experience-title">
+      <div class="container editorial-grid">
+        <div class="section-intro">
+          <p class="section-label reveal"><span>03</span> About me / Experience</p>
+          <h2 class="display-heading reveal" id="experience-title">Accounting work across operations, reporting, <span class="muted-heading">and analysis.</span></h2>
+          <p class="intro-note reveal">Selected professional experience from feasibility studies, manufacturing billing, leasing and lending, and accounting support.</p>
+        </div>
+        <div class="experience-list">
+          <article class="experience-row reveal">
+            <div class="experience-meta"><span>Aug 2026 — Present</span><small>Part-time</small></div>
+            <div class="experience-content"><h3>Feasibility Accountant</h3><p class="company">Feasib Accountant</p><p>Prepare the financial aspect of feasibility studies, including financial analysis and reports to assess business viability. Discuss financial assumptions, results, and findings with clients to support understanding of the study.</p></div>
           </article>
-
-          <article class="timeline-item reveal">
-            <div class="timeline-meta"><span>Jun 2026 — Present</span><small>Pasig City</small></div>
-            <div class="timeline-copy">
-              <h3>Billing Officer</h3>
-              <p class="company">Brenton International Venture Manufacturing Corporation</p>
-              <p>Manage billing operations for 600+ assigned customer accounts, prepare sales invoices and statements of account, resolve billing discrepancies, and monitor receivables aging for credit-term sales.</p>
-            </div>
+          <article class="experience-row reveal">
+            <div class="experience-meta"><span>Jun 2026 — Present</span><small>Full-time</small></div>
+            <div class="experience-content"><h3>Billing Officer</h3><p class="company">Brenton International Venture Manufacturing Corporation</p><p>Manage billing operations for 600+ assigned customer accounts, preparing accurate Sales Invoices and Statements of Account. Coordinate with customers to resolve billing discrepancies and support collection activities.</p><p>Monitor receivables aging for credit-term sales, providing clear visibility of outstanding balances, overdue accounts, and collection priorities.</p></div>
           </article>
-
-          <article class="timeline-item reveal">
-            <div class="timeline-meta"><span>Sep 2025 — Jun 2026</span><small>Leasing + lending</small></div>
-            <div class="timeline-copy">
-              <h3>Accounting Associate</h3>
-              <p class="company">Moneyhub Inc. / Sinag Pawnshop Corporation</p>
-              <p>Managed full-cycle accounts receivable, prepared monthly financial statements and bank reconciliations, supported tax and permit requirements, and improved AR monitoring workbooks through automation and reporting tools.</p>
-            </div>
+          <article class="experience-row reveal">
+            <div class="experience-meta"><span>Sep 2025 — Jun 2026</span><small>Full-time · Leasing & lending</small></div>
+            <div class="experience-content"><h3>Accounting Associate</h3><p class="company">Moneyhub Inc. / Sinag Pawnshop Corporation</p><p>Managed full-cycle accounts receivable for leasing and lending, prepared monthly financial statements and bank reconciliations, and maintained aging and collection records.</p><p>Co-authored the Loans Receivable and Rent Receivable Policy. Handled municipal business permits and BIR filings, and improved receivables monitoring through automation and reporting tools.</p></div>
           </article>
-
-          <article class="timeline-item reveal">
-            <div class="timeline-meta"><span>Feb 2025 — May 2025</span><small>Internship</small></div>
-            <div class="timeline-copy">
-              <h3>Accounting &amp; HR Department Intern</h3>
-              <p class="company">NewFort Manpower Services Corporation</p>
-              <p>Supported books of accounts, AP/AR processing, VAT Relief documentation, payroll for 120+ employees, and selected HR administrative activities.</p>
-            </div>
+          <article class="experience-row reveal">
+            <div class="experience-meta"><span>Feb 2025 — May 2025</span><small>On-the-job training</small></div>
+            <div class="experience-content"><h3>Accounting Intern</h3><p class="company">NewFort Manpower Services Corporation</p><p>Encoded daily transactions into books of accounts and maintained financial records for BIR compliance. Supported payroll accounting for 120+ employees, verifying timekeeping records and calculating net pay.</p></div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section showcase" id="work">
-      <div class="wrap showcase-head reveal">
-        <div>
-          <div class="section-label section-label-dark"><span>04</span> Selected work</div>
-          <h2>Accounting systems built around actual workflow problems.</h2>
+    <section class="section projects-section dark-surface" id="project" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="section-topline reveal"><p class="section-label"><span>04</span> Selected projects</p><span class="tiny-note">Practical improvements, built in Excel.</span></div>
+        <div class="projects-heading"><h2 class="display-heading reveal" id="projects-title">Better processes.<br><span class="muted-heading">Built into the workbook.</span></h2><p class="reveal">A closer look at the tools behind more consistent billing, receivables monitoring, and reporting.</p></div>
+        <div class="projects-grid">
+          <article class="project-card reveal" data-project-card="invoice">
+            <div class="project-card-top"><span class="card-index">01 / Billing automation</span><svg class="icon"><use href="#i-arrow"/></svg></div>
+            <div class="project-diagram invoice-diagram" aria-label="Workflow: structured input, invoice generation, PDF export"><span>Input</span><i></i><span class="diagram-main">SI</span><i></i><span>PDF</span><span class="diagram-caption">One consistent invoice workflow</span></div>
+            <div class="project-card-copy"><h3>Sales Invoice<br>Generator</h3><p>Structured inputs. Consistent invoices. Ready-to-save PDFs.</p></div>
+            <div class="project-card-bottom"><span>Excel / VBA</span><a class="show-project" href="#case-invoice" data-project="invoice">Show project <svg class="icon"><use href="#i-arrow"/></svg></a></div>
+          </article>
+          <article class="project-card reveal" data-project-card="monitoring">
+            <div class="project-card-top"><span class="card-index">02 / Receivables automation</span><svg class="icon"><use href="#i-arrow"/></svg></div>
+            <div class="project-diagram monitoring-diagram" aria-label="Workflow: customer records feed summary and aging reports"><div class="record-stack"><span>Customer</span><span>Tenant</span></div><i></i><div class="record-stack output-stack"><span>Summary</span><span>Aging</span></div><span class="diagram-caption">Connected records. Clearer reporting.</span></div>
+            <div class="project-card-copy"><h3>AR Monitoring<br>Automation</h3><p>Customer records and receivables reports, connected in Excel.</p></div>
+            <div class="project-card-bottom"><span>Excel / VBA / Formulas</span><a class="show-project" href="#case-monitoring" data-project="monitoring">Show project <svg class="icon"><use href="#i-arrow"/></svg></a></div>
+          </article>
+          <article class="project-card reveal" data-project-card="dashboard">
+            <div class="project-card-top"><span class="card-index">03 / Financial visibility</span><svg class="icon"><use href="#i-arrow"/></svg></div>
+            <div class="project-diagram dashboard-diagram" aria-label="Workflow: receivables data, PivotTables, visual reports"><div class="dashboard-flow"><span>Receivables</span><i></i><span class="diagram-main">PivotTables</span><i></i><span>Visual reports</span></div><span class="diagram-caption">From detailed records to useful insight</span></div>
+            <div class="project-card-copy"><h3>AR Visual<br>Dashboard</h3><p>Receivables information organized for a clearer financial view.</p></div>
+            <div class="project-card-bottom"><span>Excel / PivotTables</span><a class="show-project" href="#case-dashboard" data-project="dashboard">Show project <svg class="icon"><use href="#i-arrow"/></svg></a></div>
+          </article>
         </div>
-        <p>These case studies focus on process design and accounting logic. Confidential company data and internal workbook screenshots are intentionally omitted.</p>
-      </div>
-
-      <div class="wrap project-list">
-        <article class="project-row reveal tilt-card">
-          <div class="project-visual visual-ar" aria-hidden="true">
-            <div class="mini-window">
-              <div class="mini-top"><i></i><i></i><i></i></div>
-              <div class="mini-sheet">
-                <span></span><span></span><span></span><span></span><span></span><span></span>
-                <b class="age-bar age-1"></b><b class="age-bar age-2"></b><b class="age-bar age-3"></b>
-              </div>
-            </div>
-          </div>
-          <div class="project-copy">
-            <div class="project-number">01 / Excel workflow automation</div>
-            <h3>AR Monitoring Automation</h3>
-            <p>Enhanced existing receivables monitoring workbooks with one-click customer and tenant setup, formula-driven summaries, VBA-generated aging reports, and dashboard-style reporting.</p>
-            <ul class="project-tags"><li>Excel</li><li>PivotTables</li><li>VBA</li><li>Receivables</li></ul>
-            <p class="project-result">Outcome: faster collection recording and AR reporting, fewer manual mistakes, and clearer receivables information.</p>
-          </div>
-        </article>
-
-        <article class="project-row reveal tilt-card">
-          <div class="project-visual visual-si" aria-hidden="true">
-            <div class="invoice-paper">
-              <div class="invoice-title">SALES INVOICE</div>
-              <div class="invoice-line wide"></div><div class="invoice-line"></div><div class="invoice-line"></div>
-              <div class="invoice-table"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-              <div class="invoice-total"></div>
-            </div>
-            <div class="automation-node node-a">INPUT</div>
-            <div class="automation-node node-b">PDF</div>
-          </div>
-          <div class="project-copy">
-            <div class="project-number">02 / Billing automation</div>
-            <h3>Sales Invoice Generator</h3>
-            <p>Excel/VBA workflow for creating sales invoices from structured inputs, generating the SI number and date, populating customer and billing details, creating invoice sheets, and saving completed invoices as PDF.</p>
-            <ul class="project-tags"><li>Excel 2019</li><li>VBA</li><li>Billing</li><li>PDF workflow</li></ul>
-            <p class="project-result">Designed to reduce repetitive encoding while keeping the invoice format consistent for operational billing.</p>
-          </div>
-        </article>
-
-        <article class="project-row reveal tilt-card">
-          <div class="project-visual visual-dashboard" aria-hidden="true">
-            <div class="dash-shell">
-              <div class="dash-side"></div>
-              <div class="dash-main">
-                <div class="dash-kpis"><i></i><i></i><i></i></div>
-                <div class="dash-chart"><b></b><b></b><b></b><b></b><b></b></div>
-                <div class="dash-lines"><i></i><i></i><i></i><i></i></div>
-              </div>
-            </div>
-          </div>
-          <div class="project-copy">
-            <div class="project-number">03 / Reporting &amp; visualization</div>
-            <h3>Accounts Receivable Dashboard</h3>
-            <p>Management-facing receivables view built around aging information, outstanding balances, collection priorities, and summary reporting so users can understand account status without reading raw transaction sheets.</p>
-            <ul class="project-tags"><li>Excel</li><li>Data analysis</li><li>AR aging</li><li>Reporting</li></ul>
-            <p class="project-result">Built to turn detailed receivables records into a clearer operational view for monitoring and follow-up.</p>
-          </div>
-        </article>
+        <p class="project-disclosure reveal">Case studies describe my work. Diagrams illustrate the workflow; internal workbooks and client data are not displayed.</p>
       </div>
     </section>
 
-    <section class="section section-light" id="skills">
-      <div class="wrap skills-layout">
-        <div class="skills-heading reveal">
-          <div class="section-label"><span>05</span> Capabilities</div>
-          <h2>Technical tools are useful when the accounting logic underneath them is sound.</h2>
+    <section class="section capabilities-section" id="skills" aria-labelledby="skills-title">
+      <div class="container editorial-grid">
+        <div class="section-intro">
+          <p class="section-label reveal"><span>05</span> Capabilities</p>
+          <h2 class="display-heading reveal" id="skills-title">Technical tools are useful when the accounting logic underneath them <span class="muted-heading">is sound.</span></h2>
+          <p class="intro-note reveal">Explore any keyword for its definition or a practical reference.</p>
         </div>
-
-        <div class="skill-groups">
-          <article class="skill-group reveal">
-            <p>Accounting</p>
-            <div class="skill-cloud"><span>Accounts Receivable</span><span>Billing</span><span>Bookkeeping</span><span>Financial Reporting</span><span>Bank Reconciliation</span><span>Payroll</span><span>Tax &amp; Compliance</span></div>
-          </article>
-          <article class="skill-group reveal">
-            <p>Analysis</p>
-            <div class="skill-cloud"><span>Feasibility Studies</span><span>Financial Analysis</span><span>Receivables Aging</span><span>Collection Monitoring</span><span>Financial Presentation</span></div>
-          </article>
-          <article class="skill-group reveal">
-            <p>Systems &amp; tools</p>
-            <div class="skill-cloud"><span>Advanced Excel</span><span>Excel Formulas</span><span>PivotTables</span><span>VBA / Macros</span><span>QuickBooks</span><span>Microsoft Dynamics NAV</span><span>AI-assisted tools</span></div>
-          </article>
+        <div class="capability-groups">
+          <div class="capability-group reveal"><h3>Accounting</h3><div class="keyword-list">
+            <a href="https://www.accountingcoach.com/accounts-receivable-and-bad-debts-expense/explanation" target="_blank" rel="noopener noreferrer">Accounts Receivable</a>
+            <a href="https://stripe.com/resources/more/billing-in-accounting-the-link-between-revenue-reporting-and-cash-collection" target="_blank" rel="noopener noreferrer">Billing</a>
+            <a href="https://www.accountingcoach.com/bookkeeping/explanation" target="_blank" rel="noopener noreferrer">Bookkeeping</a>
+            <a href="https://www.accountingcoach.com/blog/what-is-financial-reporting" target="_blank" rel="noopener noreferrer">Financial Reporting</a>
+            <a href="https://www.accountingcoach.com/bank-reconciliation/explanation" target="_blank" rel="noopener noreferrer">Bank Reconciliation</a>
+            <a href="https://www.accountingcoach.com/payroll-accounting/explanation" target="_blank" rel="noopener noreferrer">Payroll</a>
+            <a href="https://www.oecd.org/en/publications/tax-administration-2024_2d5fba9c-en/full-report/component-12.html" target="_blank" rel="noopener noreferrer">Tax &amp; Compliance</a>
+          </div></div>
+          <div class="capability-group reveal"><h3>Analysis</h3><div class="keyword-list">
+            <a href="https://asana.com/resources/feasibility-study" target="_blank" rel="noopener noreferrer">Feasibility Studies</a>
+            <a href="https://corporatefinanceinstitute.com/resources/accounting/analysis-of-financial-statements/" target="_blank" rel="noopener noreferrer">Financial Analysis</a>
+            <a href="https://quickbooks.intuit.com/ca/resources/accounting/accounts-receivable-aging-report-definition-uses/" target="_blank" rel="noopener noreferrer">Receivables Aging</a>
+            <a href="https://quickbooks.intuit.com/r/payments/accounts-receivable-management/" target="_blank" rel="noopener noreferrer">Collection Monitoring</a>
+            <a href="https://corporatefinanceinstitute.com/resources/career/financial-presentation-structure-guide/" target="_blank" rel="noopener noreferrer">Financial Presentation</a>
+          </div></div>
+          <div class="capability-group reveal"><h3>Systems &amp; tools</h3><div class="keyword-list">
+            <a href="https://www.microsoft.com/en-us/microsoft-365/excel" target="_blank" rel="noopener noreferrer">Advanced Excel</a>
+            <a href="https://support.microsoft.com/en-us/excel/get-started/overview-of-formulas-in-excel" target="_blank" rel="noopener noreferrer">Excel Formulas</a>
+            <a href="https://support.microsoft.com/en-us/excel/get-started/create-a-pivottable-to-analyze-worksheet-data" target="_blank" rel="noopener noreferrer">PivotTables</a>
+            <a href="https://learn.microsoft.com/en-us/office/vba/library-reference/concepts/getting-started-with-vba-in-office" target="_blank" rel="noopener noreferrer">VBA / Macros</a>
+            <a href="https://quickbooks.intuit.com/accounting/" target="_blank" rel="noopener noreferrer">QuickBooks</a>
+            <a href="https://learn.microsoft.com/en-us/previous-versions/dynamicsnav-2018/" target="_blank" rel="noopener noreferrer">Microsoft Dynamics NAV</a>
+            <a href="https://www.ibm.com/think/topics/artificial-intelligence" target="_blank" rel="noopener noreferrer">AI-assisted tools</a>
+          </div></div>
+          <details class="additional-skills reveal"><summary>Additional capabilities <svg class="icon"><use href="#i-plus"/></svg></summary><div class="additional-skills-content">
+            <div class="capability-group"><h3>Productivity &amp; organization</h3><div class="keyword-list">
+              <a href="https://www.oracle.com/erp/what-is-accounting-software/" target="_blank" rel="noopener noreferrer">In-House Accounting Systems</a><a href="https://www.microsoft.com/en-us/microsoft-365/microsoft-office" target="_blank" rel="noopener noreferrer">Microsoft Office</a><a href="https://workspace.google.com/" target="_blank" rel="noopener noreferrer">Google Workspace</a><a href="https://aws.amazon.com/what-is/data-analytics/" target="_blank" rel="noopener noreferrer">Data Analysis</a><a href="https://learn.microsoft.com/en-us/office/vba/library-reference/concepts/getting-started-with-vba-in-office" target="_blank" rel="noopener noreferrer">Excel Workflow Automation</a><a href="https://www.ibm.com/think/topics/intelligent-automation" target="_blank" rel="noopener noreferrer">AI-Assisted Automation</a><a href="https://www.microsoft.com/en-us/microsoft-365-copilot" target="_blank" rel="noopener noreferrer">AI Productivity Tools</a><a href="https://www.bls.gov/ooh/office-and-administrative-support/secretaries-and-administrative-assistants.htm" target="_blank" rel="noopener noreferrer">Administrative Support</a><a href="https://workspace.google.com/products/calendar/" target="_blank" rel="noopener noreferrer">Scheduling</a><a href="https://learn.microsoft.com/en-us/purview/records-management" target="_blank" rel="noopener noreferrer">Records Management</a><a href="https://www.ibm.com/think/topics/document-management" target="_blank" rel="noopener noreferrer">Documentation &amp; Filing</a><a href="https://www.microsoft.com/en-us/microsoft-365/planner/microsoft-planner" target="_blank" rel="noopener noreferrer">Task Coordination</a>
+            </div></div>
+            <div class="capability-group"><h3>Communication &amp; creative</h3><div class="keyword-list">
+              <a href="https://www.adobe.com/products/indesign.html" target="_blank" rel="noopener noreferrer">Graphics &amp; Publication Layout</a><a href="https://www.salesforce.com/marketing/social-media-marketing/" target="_blank" rel="noopener noreferrer">Social Media Marketing</a><a href="https://www.naceweb.org/career-readiness/competencies/career-readiness-defined" target="_blank" rel="noopener noreferrer">Client Communication</a><a href="https://www.toastmasters.org/resources/public-speaking-tips" target="_blank" rel="noopener noreferrer">Presentation Skills</a><a href="https://www.naceweb.org/career-readiness/competencies/career-readiness-defined" target="_blank" rel="noopener noreferrer">Cross-Team Coordination</a><a href="https://www.naceweb.org/career-readiness/competencies/career-readiness-defined" target="_blank" rel="noopener noreferrer">Student Organization Leadership</a><a href="https://corporatefinanceinstitute.com/resources/accounting/accounting-policies/" target="_blank" rel="noopener noreferrer">Accounting Policies &amp; Procedures</a><a href="https://www.accountingcoach.com/blog/what-is-financial-reporting" target="_blank" rel="noopener noreferrer">Digital Reporting</a>
+            </div></div>
+          </div></details>
         </div>
       </div>
     </section>
 
-    <section class="section credential-section">
-      <div class="wrap credential-grid">
-        <article class="education reveal">
-          <div class="section-label section-label-dark"><span>06</span> Education</div>
-          <p class="credential-kicker">STI College Balagtas</p>
-          <h2>Bachelor of Science in Accounting Information Systems</h2>
-          <p>2021 — June 2025</p>
-          <ul>
-            <li>President’s Lister — First and Second Year College</li>
-            <li>Former Vice President for Graphics and Publications, JPIA</li>
-          </ul>
-        </article>
-
-        <div class="credential-list reveal">
-          <article><span>Certification</span><h3>Lean Six Sigma White Belt</h3></article>
-          <article><span>Certification</span><h3>QuickBooks Online ProAdvisor</h3></article>
-          <article><span>Coursework · Jun 2025</span><h3>Bookkeeping Basics — Intuit / Coursera</h3></article>
-          <article><span>Webinar · May 2025</span><h3>SGV iTeach: BS Accounting Information System</h3></article>
-          <article><span>Webinar · Feb 2025</span><h3>Unlocking the Power of Excel for Future Accountants</h3></article>
+    <section class="section education-section" id="education" aria-labelledby="education-title">
+      <div class="container">
+        <div class="section-topline reveal"><p class="section-label"><span>06</span> Education &amp; development</p><span class="tiny-note">The foundation. The continuing work.</span></div>
+        <h2 class="display-heading education-heading reveal" id="education-title">Accounting at the core.<br><span class="muted-heading">Curiosity in the process.</span></h2>
+        <div class="education-grid">
+          <article class="degree-card reveal">
+            <div class="degree-top"><span class="eyebrow">2021 — June 2025</span><svg class="icon"><use href="#i-book"/></svg></div>
+            <p class="degree-prefix">Bachelor of Science</p><h3>Accounting<br>Information Systems</h3><p class="school">STI College Balagtas</p>
+            <div class="degree-details"><p><strong>President’s Lister</strong><span>First and Second Year College</span></p><p><strong>Vice President for Graphics and Publications</strong><span>Junior Philippine Institute of Accountants (JPIA)</span></p></div>
+          </article>
+          <div class="credentials">
+            <div class="credential-group reveal"><h3 class="eyebrow">Certifications</h3><div class="credential"><span class="credential-number">01</span><h4>Lean Six Sigma<br>White Belt</h4><svg class="icon"><use href="#i-check"/></svg></div><div class="credential"><span class="credential-number">02</span><h4>QuickBooks Online<br>ProAdvisor</h4><svg class="icon"><use href="#i-check"/></svg></div></div>
+            <div class="credential-group coursework reveal"><h3 class="eyebrow">Coursework</h3><h4>Bookkeeping Basics</h4><p class="course-meta">Intuit · Coursera / Completed June 2025</p><p>Financial statements, journal entries, and account reconciliation.</p></div>
+          </div>
         </div>
+        <details class="training-details reveal"><summary>Seminars &amp; webinars <span class="training-count">05</span><svg class="icon"><use href="#i-plus"/></svg></summary>
+          <div class="training-list"><div><h4>SGV iTeach Webinar: BS Accounting Information System</h4><span>SGV &amp; Co.</span><time datetime="2025-05">May 2025</time></div><div><h4>The Spark You Buried: Awakening the CPA in You</h4><span>Seminar</span><time datetime="2025-04">April 2025</time></div><div><h4>Unlocking the Power of Excel for Future Accountants</h4><span>Feasib Accountant</span><time datetime="2025-02">February 2025</time></div><div><h4>Cybersecurity Advocacy and Awareness Program</h4><span>National Telecommunications Commission</span><time datetime="2024-09">September 2024</time></div><div><h4>Gearing Towards Financial Literacy</h4><span>Pru Life Financial Service Company</span><time datetime="2024-02">February 2024</time></div></div>
+        </details>
       </div>
     </section>
 
-    <section class="contact-section" id="contact">
-      <div class="contact-grid-pattern" aria-hidden="true"></div>
-      <div class="wrap contact-inner">
-        <div class="contact-copy reveal">
-          <div class="section-label section-label-dark"><span>07</span> Contact</div>
-          <p class="contact-kicker">For accounting opportunities &amp; freelance inquiries</p>
-          <h2>LET’S BUILD A<br><span>BETTER WORKFLOW.</span></h2>
+    <section class="section contact-section dark-surface" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <p class="section-label reveal"><span>07</span> Contact</p>
+        <div class="contact-heading"><h2 class="reveal" id="contact-title">Let’s make<br><span>the numbers work.</span></h2><a class="contact-orbit reveal" href="mailto:benedictcastrobc@gmail.com" aria-label="Email Benedict to discuss an opportunity"><svg class="icon"><use href="#i-arrow"/></svg></a></div>
+        <div class="contact-grid">
+          <p class="contact-intro reveal">Open to accounting opportunities, particularly Accounts Receivable and General Accounting, and freelance engagements in bookkeeping, financial reporting, analysis, reconciliation, and Excel automation.</p>
+          <div class="contact-methods reveal"><a class="contact-link" href="mailto:benedictcastrobc@gmail.com"><span>Email</span><strong>benedictcastrobc@gmail.com</strong><svg class="icon"><use href="#i-arrow"/></svg></a><a class="contact-link" href="tel:+639349958763"><span>Phone</span><strong>0934 995 8763</strong><svg class="icon"><use href="#i-arrow"/></svg></a><div class="contact-location"><span>Based in</span><address>219 Dalig Rd., Borol 2nd,<br>Balagtas, Bulacan, Philippines</address></div></div>
         </div>
-
-        <div class="contact-links reveal">
-          <a href="mailto:benedictcastrobc@gmail.com"><span>Email</span><strong>benedictcastrobc@gmail.com</strong><i aria-hidden="true">↗</i></a>
-          <a href="https://www.linkedin.com/in/benedict-castro-accounting" target="_blank" rel="noopener noreferrer"><span>LinkedIn</span><strong>/benedict-castro-accounting</strong><i aria-hidden="true">↗</i></a>
-          <a href="https://www.facebook.com/share/1Jr77HxbWq/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer"><span>Facebook</span><strong>Benedict Castro</strong><i aria-hidden="true">↗</i></a>
-        </div>
+        <div class="contact-bottom reveal"><span>Accounting · Analysis · Automation</span><div class="footer-socials"><a href="https://www.linkedin.com/in/benedict-castro-accounting" target="_blank" rel="noopener noreferrer">LinkedIn <svg class="icon"><use href="#i-arrow"/></svg></a><a href="https://www.facebook.com/share/1Jr77HxbWq/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">Facebook <svg class="icon"><use href="#i-arrow"/></svg></a></div></div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="wrap">
-      <p>© <span id="year"></span> Benedict Castro</p>
-      <p>Accounting · Analysis · Automation</p>
-      <a href="#home">Back to top ↑</a>
-    </div>
-  </footer>
+  <footer class="site-footer"><div class="container"><a href="#home" class="footer-name">Benedict Castro<span>.</span></a><p>© <span id="year">2026</span> Benedict Delos Santos Castro</p><a href="#home" class="back-to-top">Back to top <svg class="icon"><use href="#i-arrow"/></svg></a></div></footer>
+
+  <dialog class="project-dialog" id="project-dialog" aria-labelledby="project-dialog-title">
+    <div class="dialog-shell"><div class="dialog-topbar"><span class="eyebrow" id="dialog-category">Project case study</span><button class="icon-button close-project" type="button" aria-label="Close project details"><svg class="icon"><use href="#i-close"/></svg></button></div><div id="dialog-content"></div><div class="dialog-footer"><span>Accounting logic. Practical tools.</span><button class="text-button close-project" type="button">Back to projects <svg class="icon"><use href="#i-close"/></svg></button></div></div>
+  </dialog>
+
+  <div class="case-study-fallbacks">
+    <article id="case-invoice" class="case-study" data-category="01 / Sales Invoice Generator"><a class="case-back" href="#project">Back to projects</a><p class="case-eyebrow">Excel workflow automation / Billing</p><h2>Sales Invoice Generator</h2><p class="case-lede">A structured Excel/VBA workflow that turns billing inputs into consistently formatted sales invoices and PDF files.</p><div class="case-tools"><span>Excel 2019</span><span>VBA / Macros</span><span>PDF workflow</span></div><div class="case-flow"><span>Enter billing details</span><b>→</b><span>Generate invoice</span><b>→</b><span>Save PDF &amp; summary</span></div><div class="case-body"><section><h3>The challenge</h3><p>Preparing invoices involves repeated entry of customer details, invoice numbers, descriptions, and amounts. Each invoice also needs the same layout for printing and an identifiable PDF filename.</p></section><section><h3>What I built</h3><ul><li>A generator that places registered name, address, TIN, branch, description, date, and amount into a predefined invoice template.</li><li>Invoice numbering based on existing invoice sheets, with a separate sheet for each sales invoice.</li><li>Template-based generation that preserves the invoice’s formatting and standardizes mapped text.</li><li>PDF export using the invoice number and branch or registered customer name in the filename.</li><li>An SI Summary that consolidates invoice records and appends new invoice numbers without duplicating existing entries.</li><li>Invoice lookup by SI number for retrieving previously generated details.</li></ul></section><section><h3>Practical outcome</h3><p>Less repetitive encoding and a more consistent process for creating, finding, saving, and summarizing invoices. The workflow keeps the existing Excel environment familiar for day-to-day billing.</p></section></div><p class="case-note">This case study describes the Excel/VBA workflow. Internal invoice files and customer information are not published.</p></article>
+    <article id="case-monitoring" class="case-study" data-category="02 / AR Monitoring Automation"><a class="case-back" href="#project">Back to projects</a><p class="case-eyebrow">Moneyhub Inc. / Leasing &amp; lending</p><h2>AR Monitoring Automation</h2><p class="case-lede">Improvements to existing receivables workbooks that connect customer records, collection monitoring, and summary reporting.</p><div class="case-tools"><span>Excel formulas</span><span>VBA / Macros</span><span>PivotTables</span><span>AI-assisted tools</span></div><div class="case-flow"><span>Customer &amp; tenant records</span><b>→</b><span>Connected summaries</span><b>→</b><span>AR aging reports</span></div><div class="case-body"><section><h3>The challenge</h3><p>Manual encoding and repeated preparation of receivables reports made collection recording and AR reporting time-consuming. Information needed to be easier to maintain across leasing and lending records.</p></section><section><h3>My contribution</h3><ul><li>Enhanced existing monitoring workbooks through automation, dashboards, and summary reports.</li><li>Created a one-click process for setting up customer and tenant information sheets.</li><li>Used Excel formulas to automatically update summary reports from underlying records.</li><li>Developed a one-click AR aging report generator using VBA/macros.</li><li>Organized receivables information to support collection tracking and clearer account review.</li></ul></section><section><h3>Practical outcome</h3><p>Faster collection recording and AR reporting, fewer manual mistakes, improved accuracy, and clearer visibility of receivables information.</p></section></div><p class="case-note">This was an improvement to existing internal workbooks. Confidential records and internal workbook files are not published.</p></article>
+    <article id="case-dashboard" class="case-study" data-category="03 / AR Visual Dashboard"><a class="case-back" href="#project">Back to projects</a><p class="case-eyebrow">Receivables reporting / Data visualization</p><h2>AR Visual Dashboard</h2><p class="case-lede">Excel dashboards and summary reports that bring detailed receivables records into a clearer view for review and discussion.</p><div class="case-tools"><span>Excel</span><span>PivotTables</span><span>Excel formulas</span><span>Data visualization</span></div><div class="case-flow"><span>Receivables records</span><b>→</b><span>Summaries &amp; PivotTables</span><b>→</b><span>Visual overview</span></div><div class="case-body"><section><h3>The challenge</h3><p>Detailed customer and tenant records are necessary for accounting, but long worksheets can make the overall receivables position harder to understand.</p></section><section><h3>My contribution</h3><ul><li>Created dashboards and summary reports as part of the receivables monitoring improvements.</li><li>Used Excel formulas and PivotTables to organize information from underlying records.</li><li>Presented receivables data in a clearer format to support review, reporting, and collection discussions.</li></ul></section><section><h3>Practical outcome</h3><p>Clearer visualization of receivables information and a more useful overview alongside the detailed accounting records. This case study focuses on the visual reporting component of the AR monitoring work.</p></section></div><p class="case-note">No internal dashboard screenshot or client dataset is published. The project card illustrates the reporting workflow.</p></article>
+  </div>
 </body>
 </html>
