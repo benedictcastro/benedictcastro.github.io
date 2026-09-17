@@ -150,13 +150,7 @@
     });
   });
 
-  // Informative external links preserve the visitor's place in the portfolio.
-  document.querySelectorAll('.keyword-list a').forEach(link => {
-    link.target = '_blank';
-    link.rel = 'noopener noreferrer';
-    link.setAttribute('aria-label', `${link.textContent.trim()} — definition or reference, opens in a new tab`);
-    link.title = `Read about ${link.textContent.trim()}`;
-  });
+  // Capability explanations are initialized by capabilities.js.
 
   // Native dialog provides a focus trap, inert background, and keyboard semantics.
   const dialog = document.querySelector('#project-dialog');

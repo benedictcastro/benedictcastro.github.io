@@ -185,7 +185,7 @@ ul{padding-left:1.2em}
 .keyword-list a{position:relative;display:inline-flex;align-items:center;min-height:42px;padding:9px 13px;font-size:12px;line-height:1.65;color:var(--ink);border:1px solid var(--line);border-radius:6px;background:linear-gradient(145deg,var(--glass),transparent);box-shadow:inset 0 1px 0 rgba(255,255,255,.25);transition:transform .3s var(--ease),background .3s,border-color .3s,box-shadow .3s}
 .keyword-list a:hover{transform:translateY(-3px);border-color:var(--soft);background:var(--glass);box-shadow:0 6px 18px rgba(33,57,82,.07)}
 .keyword-list a:active{transform:translateY(-1px)}
-.keyword-list a::after{content:'↗';margin-left:0;max-width:0;overflow:hidden;opacity:0;transition:max-width .3s,margin .3s,opacity .3s;color:var(--soft)}
+.keyword-list a::after{content:"";margin-left:0;max-width:0;overflow:hidden;opacity:0;transition:max-width .3s,margin .3s,opacity .3s;color:var(--soft)}
 .keyword-list a:is(:hover,:focus-visible)::after{max-width:14px;margin-left:7px;opacity:1}
 summary{list-style:none;cursor:pointer}
 summary::-webkit-details-marker{display:none}
@@ -356,3 +356,19 @@ details[open]>summary>.icon{transform:rotate(45deg)}
 @media(min-width:601px) and (max-width:759px){.hero h1{font-size:clamp(64px,9.2vw,72px)}}
 
 @media print{.site-header,.hero-image,.hero-shade,.hero-actions,.hero-footer,.project-dialog,.site-footer,.theme-toggle,.case-study-fallbacks{display:none!important}body,.section,.hero,.contact-section,.projects-section{background:#fff!important;color:#111!important}.hero{min-height:0}.hero-copy{padding:20px 0;width:100%}.hero h1{font-size:42px}.hero-intro,.hero .eyebrow,.dark-surface p,.dark-surface h2,.dark-surface h3{color:#333!important}.section{padding:30px 0;break-inside:avoid}.container{width:100%}.section-intro{position:static}.project-card{background:white;box-shadow:none;border-color:#ccc}.reveal{opacity:1!important;transform:none!important}.muted-heading{color:#444!important}.keyword-list a::after{display:none}}
+
+/* Capability explanations share the portfolio palette and native dialog access. */
+.keyword-list a::after{display:none!important;content:none!important}
+.capability-dialog{position:fixed;inset:0;margin:auto;width:min(620px,calc(100% - 32px));max-height:calc(100svh - 40px);overflow:auto;padding:32px;border:1px solid var(--line);border-radius:22px;background:var(--paper);color:var(--ink);box-shadow:0 24px 90px #07122055}
+.capability-dialog::backdrop{background:#071220b3;backdrop-filter:blur(8px)}
+.capability-dialog h2{font-size:clamp(28px,6vw,40px);line-height:1.15;margin:18px 0 28px;overflow-wrap:anywhere}
+.capability-dialog h3{font-size:14px;margin:24px 0 10px;text-transform:uppercase;letter-spacing:.07em}
+.capability-dialog p{font-size:16px;line-height:1.75}
+.capability-close{display:block;margin-left:auto;padding:10px 16px;border:1px solid var(--line);border-radius:10px;background:transparent;color:inherit;font:inherit;cursor:pointer;min-height:44px}
+.capability-reference{margin-top:28px;border:1px solid var(--line);color:inherit}
+.capability-dialog .capability-source-note{font-size:12px;margin-top:12px}
+.credential-detail{display:block;font-size:14px;font-weight:400;line-height:1.6;margin-top:12px}
+.credential-link{display:inline-block;font-size:14px;font-weight:600;padding:10px 0;text-decoration:none;border-bottom:1px solid currentColor}
+.flow-separator{transform:none!important}
+@media(prefers-reduced-motion:no-preference){.capability-dialog[open]{animation:capability-in .25s ease-out}@keyframes capability-in{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:none}}}
+@media(max-width:600px){.capability-dialog{padding:23px}.contact-heading{flex-wrap:wrap}.contact-heading>.button{margin-top:18px}}
